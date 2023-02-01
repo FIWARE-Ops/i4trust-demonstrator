@@ -18,6 +18,8 @@ applications:
       initDb:
         externalIdp:
           clientID: "EU.EORI.DEMARKETPLACE"
+          tokenKey: "/business-ecosystem-logic-proxy/key.pem"
+          tokenCrt: "/business-ecosystem-logic-proxy/cert.pem"
           idp: 
             - name: "Packet Delivery Co."
               id: "EU.EORI.DEPROVIDER"
