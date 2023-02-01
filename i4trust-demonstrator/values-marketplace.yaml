@@ -107,6 +107,14 @@ applications:
               country: "DE"
               phoneType: "Office"
               phoneNumber: "+4915121234567"
+        createCatalog:
+          catalogEnabled: true
+          catalog:
+            - name: "Packet Delivery services"
+              description: "Offerings for packet delivery services"
+              keyrockHost: "http://happypets-keyrock:8080"
+              username: "happypets-operator"
+        indexesEnabled: true
         lpHref: https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev
         targetNamespace: i4t-main
         i4trust:
