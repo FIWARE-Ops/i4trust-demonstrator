@@ -26,6 +26,11 @@ applications:
               server: "https://pdc-keyrock-0-i4t-main.apps.fiware.fiware.dev"
               description: "Employee IDP of Packet Delivery Company"
               callbackURL: "https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DEPROVIDER/callback"
+            - name: "Happy Pets Inc."
+              id: "EU.EORI.DECONSUMERONE"
+              server: "https://happypets-keyrock-0-i4t-main.apps.fiware.fiware.dev"
+              description: "Employee IDP of Happy Pets"
+              callbackURL: "https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DECONSUMERONE/callback"
 
   - name: mysql
     enabled: true
@@ -89,6 +94,19 @@ applications:
       loadPlugins:
         targetNamespace: i4t-main
       initData:
+        createAddress:
+          addressEnabled: true
+          customer:
+            - keyrockHost: "http://happypets-keyrock:8080"
+              username: "happypets-operator"
+              email: "operator@happypets.com"
+              streetOne: "Happystr. 15"
+              postcode: "12345"
+              city: "Berlin"
+              stateOrProvince: "Berlin"
+              country: "DE"
+              phoneType: "Office"
+              phoneNumber: "+4915121234567"
         lpHref: https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev
         targetNamespace: i4t-main
         i4trust:
