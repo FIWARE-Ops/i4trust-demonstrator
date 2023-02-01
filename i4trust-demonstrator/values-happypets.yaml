@@ -12,7 +12,7 @@ applications:
   - name: mysql
     enabled: false
     source_path: applications/mysql
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -20,7 +20,7 @@ applications:
   - name: happypets-keyrock
     enabled: true
     source_path: applications/consumer-keyrock
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -224,7 +224,7 @@ applications:
   - name: happypets-shop-keyrock
     enabled: true
     source_path: applications/consumer-keyrock-shop
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml

@@ -115,6 +115,7 @@ jobs:
           kubeseal --version
 
           echo "Creating secret file..."
+          cd ..
           mkdir secrets
           cd secrets/
           OS_SERVER=`echo -n "${{ secrets.OPENSHIFT_SERVER }}" | base64 -w 0`

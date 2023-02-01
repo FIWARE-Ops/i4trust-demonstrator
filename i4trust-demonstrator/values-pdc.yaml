@@ -12,7 +12,7 @@ applications:
   - name: mongodb
     enabled: false
     source_path: applications/mongodb
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -21,7 +21,7 @@ applications:
   - name: mysql
     enabled: false
     source_path: applications/mysql
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -29,7 +29,7 @@ applications:
   - name: pdc-orion
     enabled: true
     source_path: applications/provider-orion
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -45,7 +45,7 @@ applications:
   - name: pdc-kong
     enabled: true
     source_path: applications/provider-kong
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -226,7 +226,7 @@ applications:
   - name: pdc-keyrock
     enabled: true
     source_path: applications/provider-keyrock
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -432,7 +432,7 @@ applications:
   - name: pdc-as
     enabled: true
     source_path: applications/provider-as
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -608,7 +608,7 @@ applications:
   - name: pdc-portal
     enabled: true
     source_path: applications/provider-portal
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml

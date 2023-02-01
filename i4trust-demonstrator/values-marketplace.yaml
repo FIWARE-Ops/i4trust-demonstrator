@@ -10,7 +10,7 @@ applications:
   - name: mongodb
     enabled: true
     source_path: applications/mongodb
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -26,7 +26,7 @@ applications:
   - name: mysql
     enabled: true
     source_path: applications/mysql
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -34,7 +34,7 @@ applications:
   - name: elastic
     enabled: true
     source_path: applications/elastic
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -42,7 +42,7 @@ applications:
   - name: keyrock
     enabled: true
     source_path: applications/keyrock
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -75,7 +75,7 @@ applications:
   - name: marketplace
     enabled: true
     source_path: applications/marketplace
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
@@ -428,7 +428,7 @@ applications:
   - name: ishare-satellite
     enabled: true
     source_path: applications/satellite
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     helm_values:
     - values.yaml
