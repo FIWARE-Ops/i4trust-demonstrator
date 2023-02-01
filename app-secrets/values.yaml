@@ -1,0 +1,8 @@
+source: https://github.com/FIWARE-Ops/i4trust-demonstrator
+release: i4t-demo
+destination_namespace: &destination i4t-demo
+branch: &branch main
+name: secrets
+source_path: secrets
+source_ref: *branch
+

@@ -1,0 +1,8 @@
+apiVersion: v2
+name: i4trust-demonstrator
+description: Helm chart to deploy the full i4Trust reference example
+type: application
+version: 0.0.1
+maintainers:
+  - name: Dennis Wendland
+    email: dennis.wendland@fiware.org

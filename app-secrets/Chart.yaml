@@ -1,0 +1,8 @@
+apiVersion: v2
+name: i4trust-demonstrator-secrets
+description: Helm chart to deploy the necessary secrets for the demonstrator
+type: application
+version: 0.0.1
+maintainers:
+  - name: Dennis Wendland
+    email: dennis.wendland@fiware.org

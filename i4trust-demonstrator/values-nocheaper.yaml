@@ -1,0 +1,51 @@
+## values to be used for deployement in PoC namespaces
+## additional config file is used, since we rely on managed databases there.
+
+source: https://github.com/FIWARE-Ops/i4trust-consumer
+release: i4t-consumer-demo
+destination_namespace: &destination i4t-consumer-demo
+branch: &branch main
+secretsEnabled: &secretsEnabled false
+
+applications:
+  - name: mysql
+    enabled: true
+    source_path: applications/mysql
+    source_ref: *branch
+    destination: *destination
+    helm_values:
+    - values.yaml
+
+  - name: consumer-keyrock
+    enabled: true
+    source_path: applications/consumer-keyrock
+    source_ref: *branch
+    destination: *destination
+    helm_values:
+    - values.yaml
+    values:
+      keyrock:
+        host: https://consumer-keyrock-0-i4t-consumer-main.apps.fiware.fiware.dev
+        satellite:
+          # Need to specify valid satellite hostname here
+          url: "https://ishare-satellite-i4t-consumer-main.apps.fiware.fiware.dev"
+          tokenEndpoint: "https://ishare-satellite-i4t-consumer-main.apps.fiware.fiware.dev/token"
+          partiesEndpoint: "https://ishare-satellite-i4t-consumer-main.apps.fiware.fiware.dev/parties"
+
+  - name: consumer-keyrock-shop
+    enabled: true
+    source_path: applications/consumer-keyrock-shop
+    source_ref: *branch
+    destination: *destination
+    helm_values:
+    - values.yaml
+    values:
+      keyrock:
+        host: https://consumer-keyrock-shop-0-i4t-consumer-main.apps.fiware.fiware.dev
+        satellite:
+          # Need to specify valid satellite hostname here
+          url: "https://ishare-satellite-i4t-consumer-main.apps.fiware.fiware.dev"
+          tokenEndpoint: "https://ishare-satellite-i4t-consumer-main.apps.fiware.fiware.dev/token"
+          partiesEndpoint: "https://ishare-satellite-i4t-consumer-main.apps.fiware.fiware.dev/parties"
+
+  
