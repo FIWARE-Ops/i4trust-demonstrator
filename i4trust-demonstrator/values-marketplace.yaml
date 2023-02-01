@@ -53,6 +53,8 @@ applications:
         url: https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev
         redirectUrl: https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/fiware/callback
       keyrock:
+        initScript:
+          dbName: idm_bae
         host: https://keyrock-0-i4t-main.apps.fiware.fiware.dev
         additionalEnvVars:
           - name: IDM_TITLE
