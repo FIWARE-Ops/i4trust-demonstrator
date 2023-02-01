@@ -16,12 +16,14 @@ applications:
     - values.yaml
     values:
       initDb:
-        idp: 
-          - name: "Packet Delivery Co."
-            id: "EU.EORI.DEPROVIDER"
-            server: "https://pdc-keyrock-0-i4t-main.apps.fiware.fiware.dev"
-            description: "Employee IDP of Packet Delivery Company"
-            callbackURL: "https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DEPROVIDER/callback"
+        externalIdp:
+          clientID: "EU.EORI.DEMARKETPLACE"
+          idp: 
+            - name: "Packet Delivery Co."
+              id: "EU.EORI.DEPROVIDER"
+              server: "https://pdc-keyrock-0-i4t-main.apps.fiware.fiware.dev"
+              description: "Employee IDP of Packet Delivery Company"
+              callbackURL: "https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DEPROVIDER/callback"
 
   - name: mysql
     enabled: true
