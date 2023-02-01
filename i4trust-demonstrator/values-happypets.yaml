@@ -239,6 +239,17 @@ applications:
             - username: "user_standard"
               email: "steve.standard@mymail.com"
               password: "steve"
+        createPolicies:
+          id: hpshop
+          dbName: i4t_happypets_shop_idm
+          issuer: "EU.EORI.DECONSUMERONE"
+          user:
+            - username: "user_prime"
+              isPrime: true
+              entityId: "urn:ngsi-ld:DELIVERYORDER:HAPPYPETS001"
+            - username: "user_standard"
+              isPrime: false
+              entityId: "urn:ngsi-ld:DELIVERYORDER:HAPPYPETS002"
       keyrock:
         host: https://happypets-shop-keyrock-0-i4t-main.apps.fiware.fiware.dev
         satellite:
