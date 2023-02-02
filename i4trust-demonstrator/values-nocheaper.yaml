@@ -248,7 +248,7 @@ applications:
           user:
             - username: "cheaty_prime"
               email: "cheaty.prime@mymail.com"
-              password: "max"
+              password: "cheaty"
             - username: "user_standard"
               email: "bob.standard@mymail.com"
               password: "bob"

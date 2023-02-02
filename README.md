@@ -59,6 +59,18 @@ Different accounts are created automatically with default passwords.
 | Component     | Username               | Password          | Comment |
 |---------------|------------------------|-------------------|---------|
 | Keyrock Marketplace | admin@test.com | admin | Admin user of the marketplace |
+| Keyrock Packet Delivery | admin@test.com | admin | Admin user of the Provider Keyrock IDP |
+| Keyrock Packet Delivery | operator@packetdelivery.com | operator | Operator employee user of Packet Delivery |
+| Keyrock Happy Pets | admin@test.com | admin | Admin user of the Happy Pets Keyrock IDP |
+| Keyrock Happy Pets | operator@happypets.com | operator | Operator employee user of Happy Pets |
+| Keyrock Happy Pets Shop | admin@test.com | admin | Admin user of the Happy Pets Shop Keyrock IDP |
+| Keyrock Happy Pets Shop | max.prime@mymail.com | max | Prime user of the Happy Pets shop system |
+| Keyrock Happy Pets Shop | steve.standard@mymail.com | steve | Standard user of the Happy Pets shop system |
+| Keyrock No Cheaper | admin@test.com | admin | Admin user of the No Cheaper Keyrock IDP |
+| Keyrock No Cheaper | operator@nocheaper.com | operator | Operator employee user of No Cheaper |
+| Keyrock No Cheaper Shop | admin@test.com | admin | Admin user of the No Cheaper Shop Keyrock IDP |
+| Keyrock No Cheaper Shop | cheaty.prime@mymail.com | cheaty | Prime user of the No Cheaper shop system |
+| Keyrock No Cheaper Shop | bob.standard@mymail.com | bob | Standard user of the No Cheaper shop system |
 
 Root CA, keys and certificates have been created and self-signed using openssl. Keys and certificates used for this demonstrator 
 can be found in the [certs folder](./certs). These should never be used in any kind of production enviroment or on a 
@@ -68,3 +80,6 @@ Below table displays the assigned EORIs assigned to the different organisations 
 |------------------------|----------------------------|
 | Satellite              | EU.EORI.FIWARESATELLITE    |
 | Marketplace            | EU.EORI.DEMARKETPLACE      |
+| Packet Delivery        | EU.EORI.DEPROVIDER         |
+| Happy Pets             | EU.EORI.DECONSUMERONE      |
+| No Cheaper             | EU.EORI.DECONSUMERTWO      |
