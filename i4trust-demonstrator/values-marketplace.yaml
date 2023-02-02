@@ -18,8 +18,6 @@ applications:
       initDb:
         externalIdp:
           clientID: "EU.EORI.DEMARKETPLACE"
-          tokenKey: "/business-ecosystem-logic-proxy/key.pem"
-          tokenCrt: "/business-ecosystem-logic-proxy/cert.pem"
           idp: 
             - name: "Packet Delivery Co."
               id: "EU.EORI.DEPROVIDER"
@@ -114,7 +112,8 @@ applications:
               description: "Offerings for packet delivery services"
               keyrockHost: "http://happypets-keyrock:8080"
               username: "happypets-operator"
-        indexesEnabled: true
+        fillIndexes:
+          indexesEnabled: true
         lpHref: https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev
         targetNamespace: i4t-main
         i4trust:
