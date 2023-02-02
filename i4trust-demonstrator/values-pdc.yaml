@@ -40,6 +40,7 @@ applications:
             hosts:
               - mongodb.i4t-main.svc.cluster.local
       initData:
+        initEnabled: true
         orionHost: pdc-orion.i4t-main.svc.cluster.local:1026
 
   - name: pdc-kong
@@ -233,10 +234,12 @@ applications:
     values:
       initScript:
         marketplacePolicy:
+          policyEnabled: true
           dbName: i4t_pdc_idm
           issuer: "EU.EORI.DEPROVIDER"
           target: "EU.EORI.DEMARKETPLACE"
         createUser:
+          userEnabled: true
           user:
             - username: "pdc-operator"
               email: "operator@packetdelivery.com"
@@ -626,6 +629,11 @@ applications:
               url: "https://happypets-shop-keyrock-0-i4t-main.apps.fiware.fiware.dev"
               authorize_endpoint: "https://happypets-shop-keyrock-0-i4t-main.apps.fiware.fiware.dev/oauth2/authorize"
               token_endpoint: "https://happypets-shop-keyrock-0-i4t-main.apps.fiware.fiware.dev/oauth2/token"
+            - name: "No Cheaper Inc."
+              id: "EU.EORI.DECONSUMERTWO"
+              url: "https://nocheaper-shop-keyrock-0-i4t-main.apps.fiware.fiware.dev"
+              authorize_endpoint: "https://nocheaper-shop-keyrock-0-i4t-main.apps.fiware.fiware.dev/oauth2/authorize"
+              token_endpoint: "https://nocheaper-shop-keyrock-0-i4t-main.apps.fiware.fiware.dev/oauth2/token"
           client:
             id: "EU.EORI.DEPROVIDER"
             key: |

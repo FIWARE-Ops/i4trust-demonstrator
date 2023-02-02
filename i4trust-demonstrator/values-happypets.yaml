@@ -27,6 +27,7 @@ applications:
     values:
       initScript:
         createUser:
+          userEnabled: true
           id: hp
           user:
             - username: "happypets-operator"
@@ -231,6 +232,7 @@ applications:
     values:
       initScript:
         createUser:
+          userEnabled: true
           id: hpshop
           user:
             - username: "user_prime"
@@ -240,6 +242,7 @@ applications:
               email: "steve.standard@mymail.com"
               password: "steve"
         createPolicies:
+          policiesEnabled: true
           id: hpshop
           dbName: i4t_happypets_shop_idm
           issuer: "EU.EORI.DECONSUMERONE"

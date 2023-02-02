@@ -4,10 +4,7 @@ on:
   push:
     branches-ignore:
       - main
-    #branches:
-    #  - 'feature-**'
-      
-
+      - 'no-deploy/**'
 
 concurrency: 
     group: ${{ github.ref }}
@@ -96,6 +93,17 @@ jobs:
           sed -i'' -e 's/branch: \&branch main/branch: \&branch ${{ steps.branch-name.outputs.current_branch }}/g' values-happypets.yaml
           # Replace subdomain in URLs with branch name (prefixed by i4t-)
           sed -i'' -e 's/i4t-main/i4t-${{ steps.branch-name.outputs.current_branch }}/g' values-happypets.yaml
+
+          ## No Cheaper
+          echo "Renaming for No Cheaper"
+          # replace the default destination namespace(i4t-demo) with the branch namespace (prefixed with i4t-)
+          sed -i'' -e 's/destination_namespace: \&destination i4t-demo/destination_namespace: \&destination i4t-${{ steps.branch-name.outputs.current_branch }}/g' values-nocheaper.yaml
+          # prefix the application name with the branch name to avoid collisions (prefixed with i4t-)
+          sed -i'' -e 's/release: i4t-demo/release: i4t-${{ steps.branch-name.outputs.current_branch }}/g' values-nocheaper.yaml
+          # set the target revision to the current branch
+          sed -i'' -e 's/branch: \&branch main/branch: \&branch ${{ steps.branch-name.outputs.current_branch }}/g' values-nocheaper.yaml
+          # Replace subdomain in URLs with branch name (prefixed by i4t-)
+          sed -i'' -e 's/i4t-main/i4t-${{ steps.branch-name.outputs.current_branch }}/g' values-nocheaper.yaml
       
       # See https://github.com/helm/chart-releaser-action/issues/6
       - name: Install Helm
@@ -154,6 +162,9 @@ jobs:
           # render app of apps and apply it for Happy Pets
           echo "Deploy applications for Happy Pets"
           helm template ${{ secrets.OVERWRITE_VALUES }} -f values-happypets.yaml . | oc -n argocd apply -f -
+          # render app of apps and apply it for No Cheaper
+          echo "Deploy applications for No Cheaper"
+          helm template ${{ secrets.OVERWRITE_VALUES }} -f values-nocheaper.yaml . | oc -n argocd apply -f -
           # render app of apps and apply it for marketplace
           echo "Deploy applications for Marketplace"
           helm template ${{ secrets.OVERWRITE_VALUES }} -f values-marketplace.yaml . | oc -n argocd apply -f -
@@ -174,7 +185,7 @@ jobs:
           try=0
           tries=30
           # get the list of apps in the namespace 
-          componentsInstalled=$(cat i4trust-demonstrator/values-marketplace.yaml i4trust-demonstrator/values-pdc.yaml i4trust-demonstrator/values-happypets.yaml | grep "enabled: true" -c)
+          componentsInstalled=$(cat i4trust-demonstrator/values-marketplace.yaml i4trust-demonstrator/values-pdc.yaml i4trust-demonstrator/values-happypets.yaml i4trust-demonstrator/values-nocheaper.yaml | grep "enabled: true" -c)
           echo "Number of apps to be deployed:" $componentsInstalled
           # check if the condition is met
           while [ $healthy == 0 ] && [ $try -lt $tries ]

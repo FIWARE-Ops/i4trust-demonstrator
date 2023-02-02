@@ -5,6 +5,7 @@ on:
   delete:
     branches-ignore:
       - main
+      - 'no-deploy/**'
 
 jobs:
 
