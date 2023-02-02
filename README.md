@@ -46,6 +46,34 @@ route.route.openshift.io/marketplace-biz-ecosystem-logic-proxy-0   marketplace-b
 The marketplace logic proxy would be available under the URL: `https://marketplace-biz-ecosystem-logic-proxy-0-i4t-demo.apps.fiware.fiware.dev`.
 
 
+### Configuration
+
+The deployment is configured via different `values.yaml` files in the folder [i4trust-demonstrator/](./i4trust-demonstrator/). 
+There is a separate file for each organisation of this demonstrator:
+* Marketplace + Satellite: [i4trust-demonstrator/values-marketplace.yaml](./i4trust-demonstrator/values-marketplace.yaml)
+* Packet Delivery (Service Provider): [i4trust-demonstrator/values-pdc.yaml](./i4trust-demonstrator/values-pdc.yaml)
+* Happy Pets (Service Consumer): [i4trust-demonstrator/values-happypets.yaml](./i4trust-demonstrator/values-happypets.yaml)
+* No Cheaper (Service Consumer): [i4trust-demonstrator/values-nocheaper.yaml](./i4trust-demonstrator/values-nocheaper.yaml)
+
+Several flags allow to enable or disable certain features:
+* Satellite: Per default, this deployment uses a test version of the iSHARE satellite, which should be NOT used in any kind of production 
+  environment. If an external satellite instance should be used, the deployment of the test satellite can be switched off in 
+  [i4trust-demonstrator/values-marketplace.yaml](./i4trust-demonstrator/values-marketplace.yaml). Make sure to edit the satelite references 
+  in the other `values.yaml` files.
+* Marketplace: During deployment, certain features can be already created, like catalogs or offerings. Configuration is done 
+  in the file: [i4trust-demonstrator/values-marketplace.yaml](./i4trust-demonstrator/values-marketplace.yaml)
+  - Plugins: Loading of plugins is configured by the parameter `loadPlugins.pluginsEnabled`
+  - Addresses: Consumers need a billing addresses, which can be automatically created during deployment via the 
+	parameter `initData.createAddress.addressEnabled`. An array needs to be provided for the addresses to be created.
+  - Catalog: Initial catalogs can be created for the service provider. This is configured with the parameter `initData.createCatalog.catalogEnabled`.
+	An array needs to be provided for the catalogs to be created.
+  - Offerings: Product specifications and offerings can be created automatically during deployment. The basic and premium Packet Delivery 
+	Service offerings for the standard OIDC flow can be created with `initData.createOfferings.standardI4Trust.basicEnabled` 
+	and `initData.createOfferings.standardI4Trust.premiumEnabled`.
+  - Indexes: When catalogs and/or offerings have been created automatically, the filling of indexes should be enabled 
+	via `initData.fillIndexes.indexesEnabled`
+
+
 ### Uninstall
 
 For removing all components and deleting the applications and namespace, simply remove the branch.
