@@ -144,6 +144,10 @@ applications:
             username: "pdc-operator"
             providerIdentifier: "EU.EORI.DEPROVIDER"
             catalogName: "Packet Delivery services"
+            basicImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-Standard_Basic.png"
+            basicImageFilename: "PacketDeliveryBasic__Offerings-Standard_Basic.png"
+            premiumImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-Standard_Premium.png"
+            premiumImageFilename: "PacketDeliveryPremium__Offerings-Standard_Premium.png"
           didI4Trust:
             basicEnabled: false
             premiumEnabled: false
