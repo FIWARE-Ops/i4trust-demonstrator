@@ -90,6 +90,7 @@ applications:
     - values.yaml
     values:
       loadPlugins:
+        pluginsEnabled: true
         targetNamespace: i4t-main
       initData:
         createAddress:
@@ -116,10 +117,21 @@ applications:
           indexesEnabled: true
         lpHref: https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev
         targetNamespace: i4t-main
-        i4trust:
+        createOfferings:
           lpHrefInternal: http://marketplace-biz-ecosystem-logic-proxy.i4t-main.svc.cluster.local:8004
-          serviceEndpoint: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/diagnosis-i4trust/ngsi-ld/v1
           arEndpoint: https://pdc-as-activation-service-i4t-main.apps.fiware.fiware.dev
+          arIdentifier: "EU.EORI.DEPROVIDER"
+          standardI4Trust:
+            basicEnabled: true
+            premiumEnabled: true
+            serviceEndpoint: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery/ngsi-ld/v1
+            keyrockHost: "http://pdc-keyrock:8080"
+            username: "pdc-operator"
+            providerIdentifier: "EU.EORI.DEPROVIDER"
+            catalogName: "Packet Delivery services"
+          didI4Trust:
+            basicEnabled: false
+            premiumEnabled: false
       business-api-ecosystem:
         oauth:
           server: https://keyrock-0-i4t-main.apps.fiware.fiware.dev
