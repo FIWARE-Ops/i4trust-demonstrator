@@ -111,7 +111,7 @@ applications:
             - name: "Packet Delivery services"
               description: "Offerings for packet delivery services"
               keyrockHost: "http://happypets-keyrock:8080"
-              username: "happypets-operator"
+              username: "pdc-operator"
         fillIndexes:
           indexesEnabled: true
         lpHref: https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev
