@@ -110,7 +110,7 @@ applications:
           catalog:
             - name: "Packet Delivery services"
               description: "Offerings for packet delivery services"
-              keyrockHost: "http://happypets-keyrock:8080"
+              keyrockHost: "http://pdc-keyrock:8080"
               username: "pdc-operator"
         fillIndexes:
           indexesEnabled: true
