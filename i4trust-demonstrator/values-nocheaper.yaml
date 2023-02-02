@@ -41,9 +41,20 @@ applications:
           url: "https://ishare-satellite-i4t-main.apps.fiware.fiware.dev"
           tokenEndpoint: "https://ishare-satellite-i4t-main.apps.fiware.fiware.dev/token"
           partiesEndpoint: "https://ishare-satellite-i4t-main.apps.fiware.fiware.dev/parties"
+        authorisationRegistry:
+          identifier: "EU.EORI.DECONSUMERTWO"
+        theme:
+          name: i4trust-nocheaper
+          image: i4trust/keyrock-theme-nocheaper:1.0.0
+          sourceTheme: /themes/i4trust-nocheaper
+          sourceImg: /img/i4trust-nocheaper
+          sourceFavicon: /favicon
+          mountTheme: /opt/fiware-idm/themes/i4trust-nocheaper
+          mountImg: /opt/fiware-idm/public/img/i4trust-nocheaper
+          mountFavicon: /opt/fiware-idm/public/favicon.ico
         additionalEnvVars:
           - name: IDM_TITLE
-            value: "Happy Pets Inc. - Company Portal"
+            value: "No Cheaper Inc. - Company Portal"
           - name: IDM_DEBUG
             value: "true"
           - name: DEBUG
@@ -233,21 +244,21 @@ applications:
       initScript:
         createUser:
           userEnabled: true
-          id: hpshop
+          id: ncshop
           user:
-            - username: "user_prime"
-              email: "max.prime@mymail.com"
+            - username: "cheaty_prime"
+              email: "cheaty.prime@mymail.com"
               password: "max"
             - username: "user_standard"
-              email: "steve.standard@mymail.com"
-              password: "steve"
+              email: "bob.standard@mymail.com"
+              password: "bob"
         createPolicies:
           policiesEnabled: true
-          id: hpshop
+          id: ncshop
           dbName: i4t_nocheaper_shop_idm
           issuer: "EU.EORI.DECONSUMERTWO"
           user:
-            - username: "user_prime"
+            - username: "cheaty_prime"
               isPrime: true
               entityId: "urn:ngsi-ld:DELIVERYORDER:NOCHEAPER001"
             - username: "user_standard"
@@ -261,9 +272,20 @@ applications:
           url: "https://ishare-satellite-i4t-main.apps.fiware.fiware.dev"
           tokenEndpoint: "https://ishare-satellite-i4t-main.apps.fiware.fiware.dev/token"
           partiesEndpoint: "https://ishare-satellite-i4t-main.apps.fiware.fiware.dev/parties"
+        authorisationRegistry:
+          identifier: "EU.EORI.DECONSUMERTWO"
+        theme:
+          name: i4trust-nocheaper
+          image: i4trust/keyrock-theme-nocheaper:1.0.0
+          sourceTheme: /themes/i4trust-nocheaper
+          sourceImg: /img/i4trust-nocheaper
+          sourceFavicon: /favicon
+          mountTheme: /opt/fiware-idm/themes/i4trust-nocheaper
+          mountImg: /opt/fiware-idm/public/img/i4trust-nocheaper
+          mountFavicon: /opt/fiware-idm/public/favicon.ico
         additionalEnvVars:
           - name: IDM_TITLE
-            value: "Happy Pets Inc. - Shop"
+            value: "No Cheaper Inc. - Shop"
           - name: IDM_DEBUG
             value: "true"
           - name: DEBUG
