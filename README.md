@@ -16,6 +16,12 @@ using [sealed-secrets](https://github.com/bitnami-labs/sealed-secrets).
 All scripts are developed for using an OpenShift Kubernetes cluster, but can be easily adapted for any 
 kind of infrastructure.
 
+This app-of-apps deployment incorporates repositories for the different organisations and environments in the data space of the reference example:
+* **[FIWARE-Ops/i4trust-marketplace](https://github.com/FIWARE-Ops/i4trust-marketplace):** Marketplace and satellite
+* **[FIWARE-Ops/i4trust-provider](https://github.com/FIWARE-Ops/i4trust-provider):** Packet Delivery Company (Service Provider)
+* **[FIWARE-Ops/i4trust-consumer](https://github.com/FIWARE-Ops/i4trust-consumer)** Happy Pets and No Cheaper (Service Consumers, two instances of this repository are deployed)
+
+
 
 ## Deployment
 
