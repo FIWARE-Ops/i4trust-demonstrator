@@ -114,6 +114,7 @@ No Cheaper shop. These policies provide the following access rights:
 | Happy Pets Shop  | steve.standard@mymail.com  | urn:ngsi-ld:DELIVERYORDER:HAPPYPETS002   | GET(*)                    |
 | No Cheaper Shop  | cheaty.prime@mymail.com    | urn:ngsi-ld:DELIVERYORDER:NOCHEAPER001   | GET(*), PATCH(pta,pda)    |
 | No Cheaper Shop  | bob.standard@mymail.com    | urn:ngsi-ld:DELIVERYORDER:NOCHEAPER002   | GET(*)                    |
+
 The entry in the brackets of the column `Permitted actions`, e.g., `(pta,pda)`, denotes the attributes of the 
 delivery order entity that can be accessed.
 
