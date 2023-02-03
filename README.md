@@ -92,29 +92,29 @@ Different accounts are created automatically with default passwords.
 
 | Component     | Username               | Password          | Comment |
 |---------------|------------------------|-------------------|---------|
-| Keyrock Marketplace | admin@test.com | admin | Admin user of the marketplace |
-| Keyrock Packet Delivery | admin@test.com | admin | Admin user of the Provider Keyrock IDP |
-| Keyrock Packet Delivery | operator@packetdelivery.com | operator | Operator employee user of Packet Delivery |
-| Keyrock Happy Pets | admin@test.com | admin | Admin user of the Happy Pets Keyrock IDP |
-| Keyrock Happy Pets | operator@happypets.com | operator | Operator employee user of Happy Pets |
-| Keyrock Happy Pets Shop | admin@test.com | admin | Admin user of the Happy Pets Shop Keyrock IDP |
-| Keyrock Happy Pets Shop | max.prime@mymail.com | max | Prime user of the Happy Pets shop system |
-| Keyrock Happy Pets Shop | steve.standard@mymail.com | steve | Standard user of the Happy Pets shop system |
-| Keyrock No Cheaper | admin@test.com | admin | Admin user of the No Cheaper Keyrock IDP |
-| Keyrock No Cheaper | operator@nocheaper.com | operator | Operator employee user of No Cheaper |
-| Keyrock No Cheaper Shop | admin@test.com | admin | Admin user of the No Cheaper Shop Keyrock IDP |
-| Keyrock No Cheaper Shop | cheaty.prime@mymail.com | cheaty | Prime user of the No Cheaper shop system |
-| Keyrock No Cheaper Shop | bob.standard@mymail.com | bob | Standard user of the No Cheaper shop system |
+| Keyrock Marketplace | `admin@test.com` | `admin` | Admin user of the marketplace |
+| Keyrock Packet Delivery | `admin@test.com` | `admin` | Admin user of the Provider Keyrock IDP |
+| Keyrock Packet Delivery | `operator@packetdelivery.com` | operator | Operator employee user of Packet Delivery |
+| Keyrock Happy Pets | `admin@test.com` | `admin` | Admin user of the Happy Pets Keyrock IDP |
+| Keyrock Happy Pets | `operator@happypets.com` | `operator` | Operator employee user of Happy Pets |
+| Keyrock Happy Pets Shop | `admin@test.com` | `admin` | Admin user of the Happy Pets Shop Keyrock IDP |
+| Keyrock Happy Pets Shop | `max.prime@mymail.com` | `max` | Prime user of the Happy Pets shop system |
+| Keyrock Happy Pets Shop | `steve.standard@mymail.com` | `steve` | Standard user of the Happy Pets shop system |
+| Keyrock No Cheaper | `admin@test.com` | `admin` | Admin user of the No Cheaper Keyrock IDP |
+| Keyrock No Cheaper | `operator@nocheaper.com` | `operator` | Operator employee user of No Cheaper |
+| Keyrock No Cheaper Shop | `admin@test.com` | `admin` | Admin user of the No Cheaper Shop Keyrock IDP |
+| Keyrock No Cheaper Shop | `cheaty.prime@mymail.com` | `cheaty` | Prime user of the No Cheaper shop system |
+| Keyrock No Cheaper Shop | `bob.standard@mymail.com` | `bob` | Standard user of the No Cheaper shop system |
 
 Furthermore there are user policies created for the shop users in the Keyrock instances of the Happy Pets and 
 No Cheaper shop. Such policies represent the access rights which are delegated by the shop organisations to the shop 
 users. These policies provide the following access rights on user level:
 | Keyrock instance | Username                   | Entity / Delivery order ID               | Permitted actions         |
 |------------------|----------------------------|------------------------------------------|---------------------------|
-| Happy Pets Shop  | max.prime@mymail.com       | urn:ngsi-ld:DELIVERYORDER:HAPPYPETS001   | GET(*), PATCH(pta,pda)    |
-| Happy Pets Shop  | steve.standard@mymail.com  | urn:ngsi-ld:DELIVERYORDER:HAPPYPETS002   | GET(*)                    |
-| No Cheaper Shop  | cheaty.prime@mymail.com    | urn:ngsi-ld:DELIVERYORDER:NOCHEAPER001   | GET(*), PATCH(pta,pda)    |
-| No Cheaper Shop  | bob.standard@mymail.com    | urn:ngsi-ld:DELIVERYORDER:NOCHEAPER002   | GET(*)                    |
+| Happy Pets Shop  | `max.prime@mymail.com`       | `urn:ngsi-ld:DELIVERYORDER:HAPPYPETS001`   | GET(*), PATCH(pta,pda)    |
+| Happy Pets Shop  | `steve.standard@mymail.com`  | `urn:ngsi-ld:DELIVERYORDER:HAPPYPETS002`   | GET(*)                    |
+| No Cheaper Shop  | `cheaty.prime@mymail.com`    | `urn:ngsi-ld:DELIVERYORDER:NOCHEAPER001`   | GET(*), PATCH(pta,pda)    |
+| No Cheaper Shop  | `bob.standard@mymail.com`    | `urn:ngsi-ld:DELIVERYORDER:NOCHEAPER002`   | GET(*)                    |
 
 The entry in the brackets of the column `Permitted actions`, e.g., `(pta,pda)`, denotes the attributes of the 
 delivery order entity that can be accessed. The column `Entity / Delivery order ID` displays the ID of the entity, 
@@ -128,8 +128,8 @@ contineously running environment.
 Below table displays the assigned EORIs assigned to the different organisations and their keys/certificates:
 | Organisation           | EORI                       |
 |------------------------|----------------------------|
-| Satellite              | EU.EORI.FIWARESATELLITE    |
-| Marketplace            | EU.EORI.DEMARKETPLACE      |
-| Packet Delivery        | EU.EORI.DEPROVIDER         |
-| Happy Pets             | EU.EORI.DECONSUMERONE      |
-| No Cheaper             | EU.EORI.DECONSUMERTWO      |
+| Satellite              | `EU.EORI.FIWARESATELLITE`    |
+| Marketplace            | `EU.EORI.DEMARKETPLACE`      |
+| Packet Delivery        | `EU.EORI.DEPROVIDER`         |
+| Happy Pets             | `EU.EORI.DECONSUMERONE`      |
+| No Cheaper             | `EU.EORI.DECONSUMERTWO`      |
