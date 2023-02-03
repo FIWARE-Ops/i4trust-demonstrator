@@ -28,7 +28,7 @@ applications:
       initScript:
         createUser:
           userEnabled: true
-          id: hp
+          id: nc
           user:
             - username: "nocheaper-operator"
               email: "operator@nocheaper.com"
