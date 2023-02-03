@@ -106,6 +106,12 @@ Different accounts are created automatically with default passwords.
 | Keyrock No Cheaper Shop | cheaty.prime@mymail.com | cheaty | Prime user of the No Cheaper shop system |
 | Keyrock No Cheaper Shop | bob.standard@mymail.com | bob | Standard user of the No Cheaper shop system |
 
+Furthermore there are user policies created for the shop users in the Keyrock instances of the Happy Pets and 
+No Cheaper shop. These policies provide the following access rights:
+| Keyrock instance | Username               | Entity / Delivery order ID    | Permitted actions    |
+|------------------|------------------------|-------------------------------|----------------------|
+|                  |                        |                               |                      |
+
 Root CA, keys and certificates have been created and self-signed using openssl. Keys and certificates used for this demonstrator 
 can be found in the [certs folder](./certs). These should never be used in any kind of production enviroment or on a 
 contineously running environment.  
