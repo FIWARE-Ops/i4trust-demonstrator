@@ -107,7 +107,8 @@ Different accounts are created automatically with default passwords.
 | Keyrock No Cheaper Shop | bob.standard@mymail.com | bob | Standard user of the No Cheaper shop system |
 
 Furthermore there are user policies created for the shop users in the Keyrock instances of the Happy Pets and 
-No Cheaper shop. These policies provide the following access rights:
+No Cheaper shop. Such policies represent the access rights which are delegated by the shop organisations to the shop 
+users. These policies provide the following access rights on user level:
 | Keyrock instance | Username                   | Entity / Delivery order ID               | Permitted actions         |
 |------------------|----------------------------|------------------------------------------|---------------------------|
 | Happy Pets Shop  | max.prime@mymail.com       | urn:ngsi-ld:DELIVERYORDER:HAPPYPETS001   | GET(*), PATCH(pta,pda)    |
@@ -116,7 +117,10 @@ No Cheaper shop. These policies provide the following access rights:
 | No Cheaper Shop  | bob.standard@mymail.com    | urn:ngsi-ld:DELIVERYORDER:NOCHEAPER002   | GET(*)                    |
 
 The entry in the brackets of the column `Permitted actions`, e.g., `(pta,pda)`, denotes the attributes of the 
-delivery order entity that can be accessed.
+delivery order entity that can be accessed. The column `Entity / Delivery order ID` displays the ID of the entity, 
+which can be accessed by the shop user.  
+Note that the shop organisations themselves need the corresponding access rights at the service provider, before the shop users 
+can finally access the delivery orders. These access rights can be acquired by the shop organisations on the marketplace. 
 
 Root CA, keys and certificates have been created and self-signed using openssl. Keys and certificates used for this demonstrator 
 can be found in the [certs folder](./certs). These should never be used in any kind of production enviroment or on a 
