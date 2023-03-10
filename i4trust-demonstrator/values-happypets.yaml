@@ -75,28 +75,28 @@ applications:
       keycloak:
         keycloakConfigCli:
           existingConfigmap: consumer-keycloak-hp-realm
-      externalDatabase:
-        database: i4t_hp_kc
-      extraEnvVars:
-        - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
-          value: "true"
-        - name: KEYCLOAK_LOG_LEVEL
-          value: INFO
-        - name: VCISSUER_ISSUER_DID
-          value: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
-        - name: VCISSUER_WALTID_ADDRESS
-          value: "http://happypets-waltid-vcwaltid"
-        - name: VCISSUER_ISSUER_KEY_FILE
-          value: /opt/keys/keyfile.json
-      extraVolumes:
-        - name: profiles
-          configMap:
-            name: consumer-keycloak-hp-profile
-        - name: issuer-key
-          configMap:
-            name: consumer-keycloak-hp-key
-        - name: providers
-          emptyDir: {}
+        externalDatabase:
+          database: i4t_hp_kc
+        extraEnvVars:
+          - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
+            value: "true"
+          - name: KEYCLOAK_LOG_LEVEL
+            value: INFO
+          - name: VCISSUER_ISSUER_DID
+            value: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
+          - name: VCISSUER_WALTID_ADDRESS
+            value: "http://happypets-waltid-vcwaltid"
+          - name: VCISSUER_ISSUER_KEY_FILE
+            value: /opt/keys/keyfile.json
+        extraVolumes:
+          - name: profiles
+            configMap:
+              name: consumer-keycloak-hp-profile
+          - name: issuer-key
+            configMap:
+              name: consumer-keycloak-hp-key
+          - name: providers
+            emptyDir: {}
 
   - name: happypets-keyrock
     enabled: true
