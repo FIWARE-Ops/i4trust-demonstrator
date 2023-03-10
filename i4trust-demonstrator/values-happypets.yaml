@@ -4,6 +4,7 @@
 source: https://github.com/FIWARE-Ops/i4trust-consumer
 release: i4t-demo
 destination_namespace: &destination i4t-demo
+purpose: &purpose i4trust-demonstrator-env
 branch: &branch main
 secretsEnabled: &secretsEnabled false
 
@@ -16,6 +17,86 @@ applications:
     destination: *destination
     helm_values:
     - values.yaml
+
+  - name: postgresql
+    enabled: true
+    source_path: applications/postgresql
+    source_ref: *branch
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+    values:
+      postgresql:
+        primary:
+          initdb:
+            scripts:
+              create.sh: |
+                psql postgresql://postgres:dbRootPassword@localhost:5432 -c "CREATE DATABASE i4t_hp_kc;" && psql postgresql://postgres:dbRootPassword@localhost:5432 -c "CREATE DATABASE i4t_nc_kc;"
+
+  - name: happypets-waltid
+    enabled: true
+    source_path: applications/consumer-waltid
+    source_ref: *branch
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+
+  - name: happypets-keycloak
+    enabled: true
+    source_path: applications/consumer-keycloak
+    source_ref: *branch
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+    values:
+      issuerKey:
+        d: "1P4hSOdzekM-hR02GXJZN-f2opHIqIuOfUjReZLMvaY"
+        kid: "z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
+        x: "2A7HsmJnhaI2c6-Q5Dr7spSRSYzElLFPIJ12hnqDlZ0"
+      realm:
+        id: hp
+        did: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
+        displayName: "Happy Pets Keycloak"
+        displayNameHtml: "<div class=\"kc-logo-text\"><span>Happy Pets Keycloak</span></div>"
+        user:
+          - username: max.prime
+            email: max.prime@mymail.com
+            password: prime
+            role: "GOLD_CUSTOMER"
+          - username: steve.standard
+            email: steve.standard@mymail.com
+            password: standard
+            role: "STANDARD_CUSTOMER"
+        frontend:
+          url: https://consumer-keycloak-i4t-consumer-main.apps.fiware.fiware.dev
+      keycloak:
+        keycloakConfigCli:
+          existingConfigmap: consumer-keycloak-hp-realm
+      externalDatabase:
+        database: i4t_hp_kc
+      extraEnvVars:
+        - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
+          value: "true"
+        - name: KEYCLOAK_LOG_LEVEL
+          value: INFO
+        - name: VCISSUER_ISSUER_DID
+          value: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
+        - name: VCISSUER_WALTID_ADDRESS
+          value: "http://happypets-waltid-vcwaltid"
+        - name: VCISSUER_ISSUER_KEY_FILE
+          value: /opt/keys/keyfile.json
+      extraVolumes:
+        - name: profiles
+          configMap:
+            name: consumer-keycloak-hp-profile
+        - name: issuer-key
+          configMap:
+            name: consumer-keycloak-hp-key
+        - name: providers
+          emptyDir: {}
 
   - name: happypets-keyrock
     enabled: true
