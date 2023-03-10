@@ -21,7 +21,7 @@ applications:
   - name: postgresql
     enabled: true
     source_path: applications/postgresql
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     purpose: *purpose
     helm_values:
@@ -37,7 +37,7 @@ applications:
   - name: happypets-waltid
     enabled: true
     source_path: applications/consumer-waltid
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     purpose: *purpose
     helm_values:
@@ -46,7 +46,7 @@ applications:
   - name: happypets-keycloak
     enabled: true
     source_path: applications/consumer-keycloak
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     purpose: *purpose
     helm_values:
