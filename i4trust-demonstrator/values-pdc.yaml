@@ -646,7 +646,7 @@ applications:
         kid: "z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
         x: "vkT4YIYHjl-n2C_ijH_TH6iMMk527WulaXX85yDM6Pg"
 
-  - name: provider-dsba-pdp
+  - name: pdc-dsba-pdp
     enabled: true
     source_path: applications/provider-dsba-pdp
     source_ref: main
