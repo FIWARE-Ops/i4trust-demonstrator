@@ -545,6 +545,7 @@ applications:
             
             - id: "EU.EORI.DEPROVIDER"
               name: "PacketDelivery"
+              did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
               status: "Active"
               start_date: "2021-09-27T00:00:00Z"
               end_date: "2051-09-27T00:00:00Z"
@@ -588,6 +589,7 @@ applications:
 
             - id: "EU.EORI.DECONSUMERONE"
               name: "HappyPets"
+              did: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
               status: "Active"
               start_date: "2021-09-27T00:00:00Z"
               end_date: "2051-09-27T00:00:00Z"
