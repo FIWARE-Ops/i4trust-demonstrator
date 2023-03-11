@@ -100,9 +100,9 @@ Different accounts are created automatically with default passwords.
 | Keyrock Happy Pets Shop | `admin@test.com` | `admin` | Admin user of the Happy Pets Shop Keyrock IDP |
 | Keyrock Happy Pets Shop | `max.prime@mymail.com` | `max` | Prime user of the Happy Pets shop system |
 | Keyrock Happy Pets Shop | `steve.standard@mymail.com` | `steve` | Standard user of the Happy Pets shop system |
-| Keycloak Happy Pets Admin Console | fiwareAdmin | fiwareAdmin | Admin user of the Happy Pets Keycloak |
-| Keycloak Happy Pets | max.prime@mymail.com | max | Prime user of the Happy Pets Keycloak |
-| Keycloak Happy Pets | steve.standard@mymail.com | steve | Standard user of the Happy Pets Keycloak |
+| Keycloak Happy Pets Admin Console | `fiwareAdmin` | `fiwareAdmin` | Admin user of the Happy Pets Keycloak |
+| Keycloak Happy Pets | `max.prime@mymail.com` | `max` | Prime user of the Happy Pets Keycloak |
+| Keycloak Happy Pets | `steve.standard@mymail.com` | `steve` | Standard user of the Happy Pets Keycloak |
 | Keyrock No Cheaper | `admin@test.com` | `admin` | Admin user of the No Cheaper Keyrock IDP |
 | Keyrock No Cheaper | `operator@nocheaper.com` | `operator` | Operator employee user of No Cheaper |
 | Keyrock No Cheaper Shop | `admin@test.com` | `admin` | Admin user of the No Cheaper Shop Keyrock IDP |
