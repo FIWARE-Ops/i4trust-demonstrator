@@ -100,6 +100,9 @@ Different accounts are created automatically with default passwords.
 | Keyrock Happy Pets Shop | `admin@test.com` | `admin` | Admin user of the Happy Pets Shop Keyrock IDP |
 | Keyrock Happy Pets Shop | `max.prime@mymail.com` | `max` | Prime user of the Happy Pets shop system |
 | Keyrock Happy Pets Shop | `steve.standard@mymail.com` | `steve` | Standard user of the Happy Pets shop system |
+| Keycloak Happy Pets Admin Console | fiwareAdmin | fiwareAdmin | Admin user of the Happy Pets Keycloak |
+| Keycloak Happy Pets | max.prime@mymail.com | max | Prime user of the Happy Pets Keycloak |
+| Keycloak Happy Pets | steve.standard@mymail.com | steve | Standard user of the Happy Pets Keycloak |
 | Keyrock No Cheaper | `admin@test.com` | `admin` | Admin user of the No Cheaper Keyrock IDP |
 | Keyrock No Cheaper | `operator@nocheaper.com` | `operator` | Operator employee user of No Cheaper |
 | Keyrock No Cheaper Shop | `admin@test.com` | `admin` | Admin user of the No Cheaper Shop Keyrock IDP |
@@ -126,10 +129,10 @@ Root CA, keys and certificates have been created and self-signed using openssl. 
 can be found in the [certs folder](./certs). These should never be used in any kind of production enviroment or on a 
 contineously running environment.  
 Below table displays the assigned EORIs assigned to the different organisations and their keys/certificates:
-| Organisation           | EORI                       |
-|------------------------|----------------------------|
+| Organisation           | EORI                       | DID                                | 
+|------------------------|----------------------------|------------------------------------|
 | Satellite              | `EU.EORI.FIWARESATELLITE`    |
 | Marketplace            | `EU.EORI.DEMARKETPLACE`      |
-| Packet Delivery        | `EU.EORI.DEPROVIDER`         |
-| Happy Pets             | `EU.EORI.DECONSUMERONE`      |
+| Packet Delivery        | `EU.EORI.DEPROVIDER`         | did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr |
+| Happy Pets             | `EU.EORI.DECONSUMERONE`      | did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v |
 | No Cheaper             | `EU.EORI.DECONSUMERTWO`      |
