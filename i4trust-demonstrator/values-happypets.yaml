@@ -64,14 +64,14 @@ applications:
         user:
           - username: max.prime
             email: max.prime@mymail.com
-            password: prime
+            password: max
             role: "GOLD_CUSTOMER"
           - username: steve.standard
             email: steve.standard@mymail.com
-            password: standard
+            password: steve
             role: "STANDARD_CUSTOMER"
         frontend:
-          url: https://consumer-keycloak-i4t-consumer-main.apps.fiware.fiware.dev
+          url: https://happypets-keycloak-i4t-main.apps.fiware.fiware.dev
       keycloak:
         keycloakConfigCli:
           existingConfigmap: consumer-keycloak-hp-realm
