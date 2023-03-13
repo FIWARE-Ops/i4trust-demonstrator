@@ -845,8 +845,8 @@ applications:
             endpoint: "https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery/ngsi-ld/v1"
             endpoint_siop: "https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery-vc/ngsi-ld/v1"
           siop:
-            redirect_uri: https://pdc-verifier-vcverifier-i4t-provider-main.apps.fiware.fiware.dev/verifier/api/v1/authenticationresponse
-            verifier_uri: pdc-verifier-vcverifier-i4t-provider-main.apps.fiware.fiware.dev
+            redirect_uri: https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev/verifier/api/v1/authenticationresponse
+            verifier_uri: pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev
             did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
           idp:
             - name: "Happy Pets Inc."
