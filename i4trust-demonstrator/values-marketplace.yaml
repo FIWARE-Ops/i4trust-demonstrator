@@ -27,7 +27,7 @@ applications:
               callbackURL: "https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DEPROVIDER/callback"
             - name: "Happy Pets Inc."
               id: "EU.EORI.DECONSUMERONE"
-              did: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
+              did: "did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
               server: "https://happypets-keyrock-0-i4t-main.apps.fiware.fiware.dev"
               description: "Employee IDP of Happy Pets"
               callbackURL: "https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DECONSUMERONE/callback"
@@ -592,7 +592,7 @@ applications:
 
             - id: "EU.EORI.DECONSUMERONE"
               name: "HappyPets"
-              did: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
+              did: "did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
               status: "Active"
               start_date: "2021-09-27T00:00:00Z"
               end_date: "2051-09-27T00:00:00Z"
