@@ -152,9 +152,22 @@ applications:
             basicImageFilename: "PacketDeliveryBasic__Offerings-Standard_Basic.png"
             premiumImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-Standard_Premium.png"
             premiumImageFilename: "PacketDeliveryPremium__Offerings-Standard_Premium.png"
-          didI4Trust:
-            basicEnabled: false
-            premiumEnabled: false
+          vcvpI4Trust:
+            basicEnabled: true
+            premiumEnabled: true
+            serviceEndpoint: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery-vc/ngsi-ld/v1
+            keyrockHost: "http://pdc-keyrock:8080"
+            username: "pdc-operator"
+            pluginId: "ngsi-ld-data-service-for-verifiablecredentials"
+            catalogName: "Packet Delivery services"
+            vcType: "PacketDeliveryService"
+            rolesBasic: "STANDARD_CUSTOMER"
+            rolesPremium: "STANDARD_CUSTOMER,GOLD_CUSTOMER"
+            uploadImages: true
+            basicImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-VCVP_Basic.png"
+            basicImageFilename: "PacketDeliveryBasic__Offerings-VCVP_Basic.png"
+            premiumImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-VCVP_Premium.png"
+            premiumImageFilename: "PacketDeliveryPremium__Offerings-VCVP_Premium.png"
       business-api-ecosystem:
         oauth:
           server: https://keyrock-0-i4t-main.apps.fiware.fiware.dev
