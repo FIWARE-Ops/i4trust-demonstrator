@@ -53,9 +53,9 @@ applications:
     - values.yaml
     values:
       issuerKey:
-        d: "1P4hSOdzekM-hR02GXJZN-f2opHIqIuOfUjReZLMvaY"
-        kid: "z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
-        x: "2A7HsmJnhaI2c6-Q5Dr7spSRSYzElLFPIJ12hnqDlZ0"
+        d: "gGqnb6ij2s-BGUpAgWVGv9odIHciuF-GuLDqyt2pLm0"
+        kid: "z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
+        x: "Pr7-Zath5ZMyvikX93LzsJNkl6HcAAJdgrwlBTSE6gs"
       realm:
         id: hp
         did: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
@@ -83,7 +83,7 @@ applications:
           - name: KEYCLOAK_LOG_LEVEL
             value: INFO
           - name: VCISSUER_ISSUER_DID
-            value: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
+            value: "did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
           - name: VCISSUER_WALTID_ADDRESS
             value: "http://happypets-waltid-vcwaltid"
           - name: VCISSUER_ISSUER_KEY_FILE
