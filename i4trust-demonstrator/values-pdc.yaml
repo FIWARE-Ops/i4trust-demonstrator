@@ -56,7 +56,7 @@ applications:
         host: "pdc-orion"
         name: "pdc-orion-packetdelivery"
         path: "/packetdelivery"
-        pathVc: "/packetdelivery-vc"
+        pathVc: "/vc"
       pdp:
         authorizationendpointaddress: http://pdc-dsba-pdp:8080/authz
       ar:
