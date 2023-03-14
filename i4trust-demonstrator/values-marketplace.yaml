@@ -140,31 +140,33 @@ applications:
           arEndpoint: https://pdc-as-activation-service-i4t-main.apps.fiware.fiware.dev
           arIdentifier: "EU.EORI.DEPROVIDER"
           standardI4Trust:
-            basicEnabled: false
-            premiumEnabled: false
+            basicEnabled: true
+            premiumEnabled: true
             serviceEndpoint: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery/ngsi-ld/v1
             keyrockHost: "http://pdc-keyrock:8080"
             username: "pdc-operator"
             providerIdentifier: "EU.EORI.DEPROVIDER"
+            providerDid: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
             catalogName: "Packet Delivery services"
-            uploadImages: false
+            uploadImages: true
             basicImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-Standard_Basic.png"
             basicImageFilename: "PacketDeliveryBasic__Offerings-Standard_Basic.png"
             premiumImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-Standard_Premium.png"
             premiumImageFilename: "PacketDeliveryPremium__Offerings-Standard_Premium.png"
           vcvpI4Trust:
-            basicEnabled: false
-            premiumEnabled: false
+            basicEnabled: true
+            premiumEnabled: true
             serviceEndpoint: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery-vc/ngsi-ld/v1
             keyrockHost: "http://pdc-keyrock:8080"
             username: "pdc-operator"
-            providerIdentifier: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
+            providerIdentifier: "EU.EORI.DEPROVIDER"
+            providerDid: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
             pluginId: "ngsi-ld-data-service-for-verifiablecredentials"
             catalogName: "Packet Delivery services"
             vcType: "PacketDeliveryService"
             rolesBasic: "STANDARD_CUSTOMER"
             rolesPremium: "STANDARD_CUSTOMER,GOLD_CUSTOMER"
-            uploadImages: false
+            uploadImages: true
             basicImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-VCVP_Basic.png"
             basicImageFilename: "PacketDeliveryBasic__Offerings-VCVP_Basic.png"
             premiumImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-VCVP_Premium.png"
