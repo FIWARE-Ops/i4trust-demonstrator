@@ -58,7 +58,7 @@ applications:
         x: "Pr7-Zath5ZMyvikX93LzsJNkl6HcAAJdgrwlBTSE6gs"
       realm:
         id: hp
-        did: "did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v"
+        did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
         displayName: "Happy Pets Keycloak"
         displayNameHtml: "<div class=\"kc-logo-text\"><span>Happy Pets Keycloak</span></div>"
         user:
