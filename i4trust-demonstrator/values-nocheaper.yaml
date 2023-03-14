@@ -45,7 +45,7 @@ applications:
           identifier: "EU.EORI.DECONSUMERTWO"
         theme:
           name: i4trust-nocheaper
-          image: i4trust/keyrock-theme-nocheaper:1.0.0
+          image: quay.io/wi_stefan/keyrock-theme-nocheaper:1.0.0
           sourceTheme: /themes/i4trust-nocheaper
           sourceImg: /img/i4trust-nocheaper
           sourceFavicon: /favicon
