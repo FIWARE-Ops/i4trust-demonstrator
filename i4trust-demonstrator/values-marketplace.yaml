@@ -158,7 +158,7 @@ applications:
             serviceEndpoint: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery-vc/ngsi-ld/v1
             keyrockHost: "http://pdc-keyrock:8080"
             username: "pdc-operator"
-            providerIdentifier: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr""
+            providerIdentifier: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
             pluginId: "ngsi-ld-data-service-for-verifiablecredentials"
             catalogName: "Packet Delivery services"
             vcType: "PacketDeliveryService"
