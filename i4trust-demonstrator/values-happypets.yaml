@@ -65,10 +65,14 @@ applications:
           - username: max.prime
             email: max.prime@mymail.com
             password: max
+            firstName: Max
+            lastName: Primer
             role: "GOLD_CUSTOMER"
           - username: steve.standard
             email: steve.standard@mymail.com
             password: steve
+            firstName: Steve
+            lastName: Standard
             role: "STANDARD_CUSTOMER"
         frontend:
           url: https://happypets-keycloak-i4t-main.apps.fiware.fiware.dev
