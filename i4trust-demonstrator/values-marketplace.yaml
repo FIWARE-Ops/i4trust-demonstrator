@@ -148,6 +148,7 @@ applications:
             providerIdentifier: "EU.EORI.DEPROVIDER"
             providerDid: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
             catalogName: "Packet Delivery services"
+            policyDuration: 10
             uploadImages: true
             basicImagePath: "https://github.com/FIWARE-Ops/i4trust-demonstrator/raw/main/doc/img/Offerings-Standard_Basic.png"
             basicImageFilename: "PacketDeliveryBasic__Offerings-Standard_Basic.png"
@@ -164,6 +165,7 @@ applications:
             pluginId: "ngsi-ld-data-service-for-verifiablecredentials"
             catalogName: "Packet Delivery services"
             vcType: "PacketDeliveryService"
+            policyDuration: 10
             rolesBasic: "STANDARD_CUSTOMER"
             rolesPremium: "STANDARD_CUSTOMER,GOLD_CUSTOMER"
             uploadImages: true
