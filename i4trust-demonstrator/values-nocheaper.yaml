@@ -71,7 +71,7 @@ applications:
           - name: KEYCLOAK_LOG_LEVEL
             value: INFO
           - name: VCISSUER_ISSUER_DID
-            value: "did:key:z6MkgJfc7A2TYWPM276mTJiGp8Lzwz1LnQJC2B6x51qWdrW6"
+            value: "did:key:745444f2b83143d382ebbcf3be24df0c"
           - name: VCISSUER_WALTID_ADDRESS
             value: "http://nocheaper-waltid-vcwaltid"
           - name: VCISSUER_ISSUER_KEY_FILE
