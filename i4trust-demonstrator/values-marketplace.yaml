@@ -33,7 +33,7 @@ applications:
               callbackURL: "https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DECONSUMERONE/callback"
             - name: "No Cheaper Inc."
               id: "EU.EORI.DECONSUMERTWO"
-              did: "did:key:abcdefghijklmnopqrstuvwxyz"
+              did: "did:key:z6MkwYMZVh4YKnLT98oYLtQ55Dt1d5ThRddrq1BVWrM5t3wz"
               server: "https://nocheaper-keyrock-0-i4t-main.apps.fiware.fiware.dev"
               description: "Employee IDP of No Cheaper"
               callbackURL: "https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DECONSUMERTWO/callback"
