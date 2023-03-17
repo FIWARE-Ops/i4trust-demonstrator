@@ -51,13 +51,16 @@ applications:
             password: cheaty
             firstName: Cheaty
             lastName: Primer
-            role: "GOLD_CUSTOMER"
+            roles:
+              - "GOLD_CUSTOMER"
+              - "STANDARD_CUSTOMER"
           - username: bob.standard
             email: bob.standard@mymail.com
             password: bob
             firstName: Bob
             lastName: Standard
-            role: "STANDARD_CUSTOMER"
+            roles:
+              - "STANDARD_CUSTOMER"
         frontend:
           url: https://nocheaper-keycloak-i4t-main.apps.fiware.fiware.dev
       keycloak:
