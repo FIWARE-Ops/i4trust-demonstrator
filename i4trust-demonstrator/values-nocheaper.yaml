@@ -42,7 +42,7 @@ applications:
         x: "G4PJYXtJ0RT9llzVlvhsyttkMbSKQ-vIJKsRkuDBI-s"
       realm:
         id: nc
-        did: "did:key:z6MkgJfc7A2TYWPM276mTJiGp8Lzwz1LnQJC2B6x51qWdrW6"
+        did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
         displayName: "No Cheaper Keycloak"
         displayNameHtml: "<div class=\"kc-logo-text\"><span>No Cheaper Keycloak</span></div>"
         user:

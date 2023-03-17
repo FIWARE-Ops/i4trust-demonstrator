@@ -150,9 +150,9 @@ Below table displays the assigned EORIs assigned to the different organisations 
 |------------------------|----------------------------|------------------------------------|
 | Satellite              | `EU.EORI.FIWARESATELLITE`    |
 | Marketplace            | `EU.EORI.DEMARKETPLACE`      |
-| Packet Delivery        | `EU.EORI.DEPROVIDER`         | did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr |
-| Happy Pets             | `EU.EORI.DECONSUMERONE`      | did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g |
-| No Cheaper             | `EU.EORI.DECONSUMERTWO`      | did:key:z6MkgJfc7A2TYWPM276mTJiGp8Lzwz1LnQJC2B6x51qWdrW6 |
+| Packet Delivery        | `EU.EORI.DEPROVIDER`         | `did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr` |
+| Happy Pets             | `EU.EORI.DECONSUMERONE`      | `did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g` |
+| No Cheaper             | `EU.EORI.DECONSUMERTWO`      | `did:key:z6MkgJfc7A2TYWPM276mTJiGp8Lzwz1LnQJC2B6x51qWdrW6` |
 
 
 
