@@ -38,7 +38,7 @@ applications:
     values:
       issuerKey:
         d: "jhKn_a2yncfXjLLft_VlprELlZmI7pKQYQkjy6zi8Ws"
-        kid: "z6LShXn4bQYXZT9HMSDT8xhGbhdCH2kuvLsqrCBp6GFyLSR3"
+        kid: "z6MkwYMZVh4YKnLT98oYLtQ55Dt1d5ThRddrq1BVWrM5t3wz"
         x: "_eTRe4QVbBXp6c_6csewm2ACq4S1jiq91Ahq8imG9DU"
       realm:
         id: nc
