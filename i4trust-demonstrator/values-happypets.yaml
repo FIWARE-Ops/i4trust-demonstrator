@@ -67,16 +67,15 @@ applications:
             password: max
             firstName: Max
             lastName: Primer
-            roles:
-              - "GOLD_CUSTOMER"
-              - "STANDARD_CUSTOMER"
+            roles: |
+              "GOLD_CUSTOMER", "STANDARD_CUSTOMER"
           - username: steve.standard
             email: steve.standard@mymail.com
             password: steve
             firstName: Steve
             lastName: Standard
-            roles:
-              - "STANDARD_CUSTOMER"
+            roles: |
+              "STANDARD_CUSTOMER"
         frontend:
           url: https://happypets-keycloak-i4t-main.apps.fiware.fiware.dev
       keycloak:
