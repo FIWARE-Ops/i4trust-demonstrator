@@ -655,7 +655,7 @@ applications:
               
             - id: "EU.EORI.DECONSUMERTWO"
               name: "NoCheaper"
-              did: "did:key:z6MkgJfc7A2TYWPM276mTJiGp8Lzwz1LnQJC2B6x51qWdrW6"
+              did: "did:key:z6MkwYMZVh4YKnLT98oYLtQ55Dt1d5ThRddrq1BVWrM5t3wz"
               status: "Active"
               start_date: "2021-09-27T00:00:00Z"
               end_date: "2051-09-27T00:00:00Z"

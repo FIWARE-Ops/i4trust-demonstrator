@@ -37,9 +37,9 @@ applications:
     - values.yaml
     values:
       issuerKey:
-        d: "bqe2eCsY0gVJYb5yT2cIYz4lHh6jN-whL4KF-mjgi8g"
-        kid: "745444f2b83143d382ebbcf3be24df0c"
-        x: "G4PJYXtJ0RT9llzVlvhsyttkMbSKQ-vIJKsRkuDBI-s"
+        d: "jhKn_a2yncfXjLLft_VlprELlZmI7pKQYQkjy6zi8Ws"
+        kid: "c0ebd37ef1be4325b29a49e99432fd0c"
+        x: "_eTRe4QVbBXp6c_6csewm2ACq4S1jiq91Ahq8imG9DU"
       realm:
         id: nc
         did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
@@ -71,7 +71,7 @@ applications:
           - name: KEYCLOAK_LOG_LEVEL
             value: INFO
           - name: VCISSUER_ISSUER_DID
-            value: "did:key:745444f2b83143d382ebbcf3be24df0c"
+            value: "did:key:z6MkwYMZVh4YKnLT98oYLtQ55Dt1d5ThRddrq1BVWrM5t3wz"
           - name: VCISSUER_WALTID_ADDRESS
             value: "http://nocheaper-waltid-vcwaltid"
           - name: VCISSUER_ISSUER_KEY_FILE
