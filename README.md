@@ -51,6 +51,11 @@ route.route.openshift.io/marketplace-biz-ecosystem-logic-proxy-0   marketplace-b
 ```
 The marketplace logic proxy would be available under the URL: `https://marketplace-biz-ecosystem-logic-proxy-0-i4t-demo.apps.fiware.fiware.dev`.
 
+There is currently no wallet application provided by this deployment. For the moment, one could use the following wallet on the mobile device: 
+* [Wallet](https://wallet.fiware.dev/)
+
+
+
 
 ### Configuration
 
@@ -101,13 +106,16 @@ Different accounts are created automatically with default passwords.
 | Keyrock Happy Pets Shop | `max.prime@mymail.com` | `max` | Prime user of the Happy Pets shop system |
 | Keyrock Happy Pets Shop | `steve.standard@mymail.com` | `steve` | Standard user of the Happy Pets shop system |
 | Keycloak Happy Pets Admin Console | `fiwareAdmin` | `fiwareAdmin` | Admin user of the Happy Pets Keycloak |
-| Keycloak Happy Pets | `max.prime@mymail.com` | `max` | Prime user of the Happy Pets Keycloak |
-| Keycloak Happy Pets | `steve.standard@mymail.com` | `steve` | Standard user of the Happy Pets Keycloak |
+| Keycloak Happy Pets | `max.prime@mymail.com` / `max.prime` | `max` | Prime user of the Happy Pets Keycloak |
+| Keycloak Happy Pets | `steve.standard@mymail.com` / `steve.standard` | `steve` | Standard user of the Happy Pets Keycloak |
 | Keyrock No Cheaper | `admin@test.com` | `admin` | Admin user of the No Cheaper Keyrock IDP |
 | Keyrock No Cheaper | `operator@nocheaper.com` | `operator` | Operator employee user of No Cheaper |
 | Keyrock No Cheaper Shop | `admin@test.com` | `admin` | Admin user of the No Cheaper Shop Keyrock IDP |
 | Keyrock No Cheaper Shop | `cheaty.prime@mymail.com` | `cheaty` | Prime user of the No Cheaper shop system |
 | Keyrock No Cheaper Shop | `bob.standard@mymail.com` | `bob` | Standard user of the No Cheaper shop system |
+| Keycloak No Cheaper Admin Console | `fiwareAdmin` | `fiwareAdmin` | Admin user of the No Cheaper Keycloak |
+| Keycloak No Cheaper Shop | `cheaty.prime@mymail.com` / `cheaty.prime` | `cheaty` | Prime user of the No Cheaper Keycloak |
+| Keycloak No Cheaper Shop | `bob.standard@mymail.com` / `bob.standard` | `bob` | Standard user of the No Cheaper Keycloak |
 
 Furthermore there are user policies created for the shop users in the Keyrock instances of the Happy Pets and 
 No Cheaper shop. Such policies represent the access rights which are delegated by the shop organisations to the shop 
@@ -125,14 +133,60 @@ which can be accessed by the shop user.
 Note that the shop organisations themselves need the corresponding access rights at the service provider, before the shop users 
 can finally access the delivery orders. These access rights can be acquired by the shop organisations on the marketplace. 
 
+In the case of the use case using DIDs and VC/VP, there are roles assigned to each user, as depicted in the following 
+table:
+| Keycloak instance | Username                        | Role                    | Permitted actions by Packet Delivery Co.        |
+|------------------|----------------------------|------------------------------------------|---------------------------|
+| Happy Pets  | `max.prime@mymail.com`       | `GOLD_CUSTOMER`   | GET(*), PATCH(pta,pda)    |
+| Happy Pets  | `steve.standard@mymail.com`  | `STANDARD_CUSTOMER`   | GET(*)                    |
+| No Cheaper  | `cheaty.prime@mymail.com`    | `GOLD_CUSTOMER`   | GET(*), PATCH(pta,pda)    |
+| No Cheaper  | `bob.standard@mymail.com`    | `STANDARD_CUSTOMER`   | GET(*)                    |
+
 Root CA, keys and certificates have been created and self-signed using openssl. Keys and certificates used for this demonstrator 
 can be found in the [certs folder](./certs). These should never be used in any kind of production enviroment or on a 
 contineously running environment.  
-Below table displays the assigned EORIs assigned to the different organisations and their keys/certificates:
+Below table displays the assigned EORIs assigned to the different organisations and their DIDs:
 | Organisation           | EORI                       | DID                                | 
 |------------------------|----------------------------|------------------------------------|
 | Satellite              | `EU.EORI.FIWARESATELLITE`    |
 | Marketplace            | `EU.EORI.DEMARKETPLACE`      |
 | Packet Delivery        | `EU.EORI.DEPROVIDER`         | did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr |
-| Happy Pets             | `EU.EORI.DECONSUMERONE`      | did:key:z6MkpMwCqXiva7WiqDuiDtThG6SAupwUVmpeaYrbF7KQHB8v |
-| No Cheaper             | `EU.EORI.DECONSUMERTWO`      |
+| Happy Pets             | `EU.EORI.DECONSUMERONE`      | did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g |
+| No Cheaper             | `EU.EORI.DECONSUMERTWO`      | did:key:z6MkgJfc7A2TYWPM276mTJiGp8Lzwz1LnQJC2B6x51qWdrW6 |
+
+
+
+## URLs and endpoints
+
+The following table lists the URLs of publicly available resources that can be owned in the browser. 
+It is assumed, that the branch name `demo` was chosen, which would result in a namespace `i4t-demo`. 
+For a different namespace, simply replace `i4t-demo` within the given URLs.
+
+| Component                  | URL               |
+|----------------------------|-------------------|
+| Marketplace Logic Proxy / UI | https://marketplace-biz-ecosystem-logic-proxy-0-i4t-demo.apps.fiware.fiware.dev |
+| Marketplace Keyrock | https://keyrock-0-i4t-demo.apps.fiware.fiware.dev |
+| Packet Delivery Portal | https://pdc-portal-i4t-demo.apps.fiware.fiware.dev |
+| Packet Delivery Keyrock (Employees) | https://pdc-keyrock-0-i4t-demo.apps.fiware.fiware.dev |
+| Happy Pets Keycloak | https://happypets-keycloak-i4t-demo.apps.fiware.fiware.dev |
+| Happy Pets Keycloak Account Login | https://happypets-keycloak-i4t-demo.apps.fiware.fiware.dev/realms/fiware-server/account/# |
+| Happy Pets Keyrock (Employees) | https://happypets-keyrock-0-i4t-demo.apps.fiware.fiware.dev |
+| Happy Pets Keyrock Shop (Customers) | https://happypets-shop-keyrock-0-i4t-demo.apps.fiware.fiware.dev |
+| No Cheaper Keycloak | https://nocheaper-keycloak-i4t-demo.apps.fiware.fiware.dev |
+| No Cheaper Keycloak Account Login | https://nocheaper-keycloak-i4t-demo.apps.fiware.fiware.dev/realms/fiware-server/account/# |
+| No Cheaper Keyrock (Employees) | https://nocheaper-keyrock-0-i4t-demo.apps.fiware.fiware.dev |
+| No Cheaper Keyrock Shop (Customers) | https://nocheaper-shop-keyrock-0-i4t-demo.apps.fiware.fiware.dev |
+
+The following table lists useful endpoints that are publicly available. 
+It is assumed, that the branch name `demo` was chosen, which would result in a namespace `i4t-demo`. 
+For a different namespace, simply replace `i4t-demo` within the given URLs.
+| Component / endpoint | URL |
+|----------------------|-----|
+| PDC Kong service endpoint (Standard OIDC) | https://pdc-kong-kong-i4t-demo.apps.fiware.fiware.dev/packetdelivery/ngsi-ld/v1 |
+| PDC Kong service endpoint (VC/VP) | https://pdc-kong-kong-i4t-demo.apps.fiware.fiware.dev/packetdelivery-vc/ngsi-ld/v1 |
+| PDC Activation Service /token endpoint | https://pdc-as-activation-service-i4t-demo.apps.fiware.fiware.dev/token |
+| PDC Activation Service /createpolicy endpoint | https://pdc-as-activation-service-i4t-demo.apps.fiware.fiware.dev/createpolicy |
+| Satellite /token endpoint | https://ishare-satellite-i4t-demo.apps.fiware.fiware.dev/token |
+| Satellite /parties endpoint | https://ishare-satellite-i4t-demo.apps.fiware.fiware.dev/parties |
+| Satellite /trusted_list endpoint | https://ishare-satellite-i4t-demo.apps.fiware.fiware.dev/trusted_list |
+| Satellite /trusted_issuer endpoint | https://ishare-satellite-i4t-demo.apps.fiware.fiware.dev/trusted_issuer/v3/issuers/ |

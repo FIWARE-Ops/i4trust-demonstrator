@@ -4,6 +4,7 @@
 source: https://github.com/FIWARE-Ops/i4trust-consumer
 release: i4t-demo
 destination_namespace: &destination i4t-demo
+purpose: &purpose i4trust-demonstrator-env
 branch: &branch main
 secretsEnabled: &secretsEnabled false
 
@@ -16,6 +17,74 @@ applications:
     destination: *destination
     helm_values:
     - values.yaml
+
+  - name: nocheaper-waltid
+    enabled: true
+    source_path: applications/consumer-waltid
+    source_ref: main
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+
+  - name: nocheaper-keycloak
+    enabled: true
+    source_path: applications/consumer-keycloak
+    source_ref: main
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+    values:
+      issuerKey:
+        d: "bqe2eCsY0gVJYb5yT2cIYz4lHh6jN-whL4KF-mjgi8g"
+        kid: "745444f2b83143d382ebbcf3be24df0c"
+        x: "G4PJYXtJ0RT9llzVlvhsyttkMbSKQ-vIJKsRkuDBI-s"
+      realm:
+        id: nc
+        did: "did:key:z6MkgJfc7A2TYWPM276mTJiGp8Lzwz1LnQJC2B6x51qWdrW6"
+        displayName: "No Cheaper Keycloak"
+        displayNameHtml: "<div class=\"kc-logo-text\"><span>No Cheaper Keycloak</span></div>"
+        user:
+          - username: cheaty.prime
+            email: cheaty.prime@mymail.com
+            password: cheaty
+            firstName: Cheaty
+            lastName: Primer
+            role: "GOLD_CUSTOMER"
+          - username: bob.standard
+            email: bob.standard@mymail.com
+            password: bob
+            firstName: Bob
+            lastName: Standard
+            role: "STANDARD_CUSTOMER"
+        frontend:
+          url: https://nocheaper-keycloak-i4t-main.apps.fiware.fiware.dev
+      keycloak:
+        keycloakConfigCli:
+          existingConfigmap: consumer-keycloak-nc-realm
+        externalDatabase:
+          database: i4t_nc_kc
+        extraEnvVars:
+          - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
+            value: "true"
+          - name: KEYCLOAK_LOG_LEVEL
+            value: INFO
+          - name: VCISSUER_ISSUER_DID
+            value: "did:key:z6MkgJfc7A2TYWPM276mTJiGp8Lzwz1LnQJC2B6x51qWdrW6"
+          - name: VCISSUER_WALTID_ADDRESS
+            value: "http://nocheaper-waltid-vcwaltid"
+          - name: VCISSUER_ISSUER_KEY_FILE
+            value: /opt/keys/keyfile.json
+        extraVolumes:
+          - name: profiles
+            configMap:
+              name: consumer-keycloak-nc-profile
+          - name: issuer-key
+            configMap:
+              name: consumer-keycloak-nc-key
+          - name: providers
+            emptyDir: {}
 
   - name: nocheaper-keyrock
     enabled: true
