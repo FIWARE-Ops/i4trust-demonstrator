@@ -632,16 +632,20 @@ applications:
     values:
       vcverifier:
         deployment:
-          protectedResource: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/orion-vc/ngsi-ld/v1
-          tirAddress: https://ishare-satellite-i4t-main.apps.fiware.fiware.dev/trusted_issuer/v3/issuers/
-          did: did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr
-          walt:
-            coreUrl: http://pdc-waltid-vcwaltid:7000
-            signatoryUrl: http://pdc-waltid-vcwaltid:7001
+          verifier:
+            tirAddress: https://ishare-satellite-i4t-main.apps.fiware.fiware.dev/trusted_issuer/v3/issuers/
+            did: did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr
+          #protectedResource: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/orion-vc/ngsi-ld/v1
+          ssikit:
             auditorUrl: http://pdc-waltid-vcwaltid:7003
-            custodianUrl: http://pdc-waltid-vcwaltid:7002
-            essifUrl: http://pdc-waltid-vcwaltid:7004
+          #walt:
+          #  coreUrl: http://pdc-waltid-vcwaltid:7000
+          #  signatoryUrl: http://pdc-waltid-vcwaltid:7001
+          #  auditorUrl: http://pdc-waltid-vcwaltid:7003
+          #  custodianUrl: http://pdc-waltid-vcwaltid:7002
+          #  essifUrl: http://pdc-waltid-vcwaltid:7004
       issuerKey:
+        waltCoreUrl: http://pdc-waltid-vcwaltid:7000
         d: "WgcX0y0OZxlA6FtLk6m3lwy_sZMvKazVax9ER10T7xY"
         kid: "z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
         x: "vkT4YIYHjl-n2C_ijH_TH6iMMk527WulaXX85yDM6Pg"
@@ -845,7 +849,7 @@ applications:
             endpoint: "https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery/ngsi-ld/v1"
             endpoint_siop: "https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery-vc/ngsi-ld/v1"
           siop:
-            redirect_uri: https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev/verifier/api/v1/authenticationresponse
+            #redirect_uri: https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev/verifier/api/v1/authenticationresponse
             verifier_uri: https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev
             did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
           idp:
