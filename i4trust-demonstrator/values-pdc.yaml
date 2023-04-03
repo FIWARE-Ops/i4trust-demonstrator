@@ -842,6 +842,11 @@ applications:
     - values.yaml
     values:
       pdc-portal:
+        deployment:
+          image:
+            repository: quay.io/wi_stefan/pdc-portal
+            tag: 2.4.0-PRE
+            pullPolicy: Always
         config:
           external:
             host: https://pdc-portal-i4t-main.apps.fiware.fiware.dev
