@@ -635,15 +635,8 @@ applications:
           verifier:
             tirAddress: https://ishare-satellite-i4t-main.apps.fiware.fiware.dev/trusted_issuer/v3/issuers/
             did: did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr
-          #protectedResource: https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/orion-vc/ngsi-ld/v1
           ssikit:
             auditorUrl: http://pdc-waltid-vcwaltid:7003
-          #walt:
-          #  coreUrl: http://pdc-waltid-vcwaltid:7000
-          #  signatoryUrl: http://pdc-waltid-vcwaltid:7001
-          #  auditorUrl: http://pdc-waltid-vcwaltid:7003
-          #  custodianUrl: http://pdc-waltid-vcwaltid:7002
-          #  essifUrl: http://pdc-waltid-vcwaltid:7004
       issuerKey:
         waltCoreUrl: http://pdc-waltid-vcwaltid:7000
         d: "WgcX0y0OZxlA6FtLk6m3lwy_sZMvKazVax9ER10T7xY"
@@ -830,7 +823,7 @@ applications:
               id: "EU.EORI.FIWARESATELLITE"
               url: "https://ishare-satellite-i4t-main.apps.fiware.fiware.dev"
           trustedVerifiers:
-            - https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev/verifier/.well-known/jwks
+            - https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev/.well-known/jwks
           providerId: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
           
   - name: pdc-portal
@@ -842,11 +835,11 @@ applications:
     - values.yaml
     values:
       pdc-portal:
-        deployment:
-          image:
-            repository: quay.io/wi_stefan/pdc-portal
-            tag: 2.4.0-PRE
-            pullPolicy: Always
+        #deployment:
+        #  image:
+        #    repository: quay.io/wi_stefan/pdc-portal
+        #    tag: 2.4.0-PRE
+        #    pullPolicy: Always
         config:
           external:
             host: https://pdc-portal-i4t-main.apps.fiware.fiware.dev
@@ -854,7 +847,6 @@ applications:
             endpoint: "https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery/ngsi-ld/v1"
             endpoint_siop: "https://pdc-kong-kong-i4t-main.apps.fiware.fiware.dev/packetdelivery-vc/ngsi-ld/v1"
           siop:
-            #redirect_uri: https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev/verifier/api/v1/authenticationresponse
             verifier_uri: https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev
             did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
           idp:
