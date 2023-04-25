@@ -15,6 +15,9 @@ applications:
     helm_values:
     - values.yaml
     values:
+      mongodb:
+        persistence:
+          enabled: true
       initDb:
         externalIdp:
           clientID: "EU.EORI.DEMARKETPLACE"
@@ -45,6 +48,10 @@ applications:
     destination: *destination
     helm_values:
     - values.yaml
+    values:
+      mysql:
+        persistence:
+          enabled: true
 
   - name: elastic
     enabled: true
@@ -179,6 +186,13 @@ applications:
           clientId: 71049899-b919-4d0f-9303-e5d2fd1bbb90
           clientSecret: f7e11746-b84f-4748-86e5-107146e888h7
         externalUrl: https://marketplace-biz-ecosystem-logic-proxy-0-i4t-main.apps.fiware.fiware.dev
+        bizEcosystemApis:
+          db:
+            host: mysql.i4t-main.svc.cluster.local
+        bizEcosystemRss:
+          db:
+            host: mysql.i4t-main.svc.cluster.local
+            url: jdbc:mysql://mysql.i4t-main.svc.cluster.local:3306/RSS
         bizEcosystemChargingBackend:
           db:
             host: mongodb.i4t-main.svc.cluster.local
