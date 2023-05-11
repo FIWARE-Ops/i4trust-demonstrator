@@ -621,6 +621,17 @@ applications:
                 QXVjlUE2Whj0cbseqQfEryj4qo3DKKo8B3oXdNLs6dN3j2jTOLmQp4Ys0OaIGT0E
                 SsuDrHI4SKKSGqzGG4zkhcvw3T3FLjAmjCptFpMmLMoftGD/7+hmKb6Mvf3F
                 -----END CERTIFICATE-----
+              roles:
+                - role: "ServiceProvider"
+                  start_date: "2023-01-31T00:00:00.000Z"
+                  end_date: "2024-01-31T00:00:00.000Z"
+                  loa: "High"
+                  complaiancy_verified: "yes"
+                  legal_adherence: "yes"
+              additional_info:
+                description: "Market leading company delivering packets"
+                website: "https://www.packetdelivery.com"
+                company_email: "info@packetdelivery.com"
 
             - id: "EU.EORI.DECONSUMERONE"
               name: "HappyPets"
