@@ -15,9 +15,6 @@ applications:
     helm_values:
     - values.yaml
     values:
-      mongodb:
-        persistence:
-          enabled: true
       initDb:
         externalIdp:
           clientID: "EU.EORI.DEMARKETPLACE"
@@ -48,10 +45,6 @@ applications:
     destination: *destination
     helm_values:
     - values.yaml
-    values:
-      mysql:
-        persistence:
-          enabled: true
 
   - name: elastic
     enabled: true
