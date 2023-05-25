@@ -363,7 +363,7 @@ applications:
                 certificate:
                   issuer:
                     kind: ClusterIssuer
-                    name: self-signed
+                    name: letsencrypt-aws-prod
           token:
             identifier: "EU.EORI.DEMARKETPLACE"
             key: |
