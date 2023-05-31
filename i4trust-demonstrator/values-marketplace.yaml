@@ -3,10 +3,20 @@
 source: https://github.com/FIWARE-Ops/i4trust-marketplace
 release: i4t-demo
 destination_namespace: &destination i4t-demo
+purpose: &purpose i4trust-demonstrator-env
 branch: &branch main
 secretsEnabled: &secretsEnabled false
 
 applications:
+  - name: waltid
+    enabled: true
+    source_path: applications/waltid
+    source_ref: main
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+  
   - name: mongodb
     enabled: true
     source_path: applications/mongodb
