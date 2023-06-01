@@ -64,6 +64,15 @@ applications:
     helm_values:
     - values.yaml
 
+  - name: postgresql
+    enabled: false
+    source_path: applications/postgresql
+    source_ref: *branch
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+
   - name: keyrock
     enabled: true
     source_path: applications/keyrock
@@ -98,6 +107,58 @@ applications:
             value: "25"
           - name: IDM_EMAIL_ADDRESS
             value: "bae-idp@fiware.io"
+
+  - name: marketplace-keycloak
+    enabled: true
+    source_path: applications/keycloak
+    source_ref: main
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+    values:
+      #issuerKey:
+      #  d: "gGqnb6ij2s-BGUpAgWVGv9odIHciuF-GuLDqyt2pLm0"
+      #  kid: "z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
+      #  x: "Pr7-Zath5ZMyvikX93LzsJNkl6HcAAJdgrwlBTSE6gs"
+      realm:
+        id: bae
+        #did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
+        displayName: "Marketplace Keycloak"
+        displayNameHtml: "<div class=\"kc-logo-text\"><span>Marketplace Keycloak</span></div>"
+        user:
+          - username: marketplace
+            email: marketplace@mymail.com
+            password: marketplace
+            roles: |
+              "CREATE_ISSUER"
+        frontend:
+          url: https://marketplace-keycloak-i4t-main.apps.fiware.fiware.dev
+      keycloak:
+        keycloakConfigCli:
+          existingConfigmap: keycloak-bae-realm
+        externalDatabase:
+          database: i4t_marketplace_kc
+        extraEnvVars:
+          - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
+            value: "true"
+          - name: KEYCLOAK_LOG_LEVEL
+            value: INFO
+          #- name: VCISSUER_ISSUER_DID
+          #  value: "did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
+          - name: VCISSUER_WALTID_ADDRESS
+            value: "http://marketplace-waltid-vcwaltid"
+          #- name: VCISSUER_ISSUER_KEY_FILE
+          #  value: /opt/keys/keyfile.json
+        extraVolumes:
+          - name: profiles
+            configMap:
+              name: keycloak-bae-profile
+          #- name: issuer-key
+          #  configMap:
+          #    name: consumer-keycloak-hp-key
+          - name: providers
+            emptyDir: {}
         
   - name: marketplace
     enabled: true

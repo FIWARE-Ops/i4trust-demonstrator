@@ -32,7 +32,7 @@ applications:
           initdb:
             scripts:
               create.sh: |
-                psql postgresql://postgres:dbRootPassword@localhost:5432 -c "CREATE DATABASE i4t_hp_kc;" && psql postgresql://postgres:dbRootPassword@localhost:5432 -c "CREATE DATABASE i4t_nc_kc;"
+                psql postgresql://postgres:dbRootPassword@localhost:5432 -c "CREATE DATABASE i4t_hp_kc;" && psql postgresql://postgres:dbRootPassword@localhost:5432 -c "CREATE DATABASE i4t_nc_kc;" && psql postgresql://postgres:dbRootPassword@localhost:5432 -c "CREATE DATABASE i4t_marketplace_kc;"
 
   - name: happypets-waltid
     enabled: true
