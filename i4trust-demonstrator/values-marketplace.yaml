@@ -8,7 +8,7 @@ branch: &branch main
 secretsEnabled: &secretsEnabled false
 
 applications:
-  - name: waltid
+  - name: marketplace-waltid
     enabled: true
     source_path: applications/waltid
     source_ref: main
