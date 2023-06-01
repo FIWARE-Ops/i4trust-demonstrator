@@ -117,13 +117,13 @@ applications:
     helm_values:
     - values.yaml
     values:
-      #issuerKey:
-      #  d: "gGqnb6ij2s-BGUpAgWVGv9odIHciuF-GuLDqyt2pLm0"
-      #  kid: "z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
-      #  x: "Pr7-Zath5ZMyvikX93LzsJNkl6HcAAJdgrwlBTSE6gs"
+      issuerKey:
+        d: "FoJjD3Q6Wh0JHt-tuN3bwGHmPSWa7p8pVe9P9cDIzWw"
+        kid: "z6MkvdQnXeKgRceAhNsZYjpQjSFcmTXshyGDvnNw7gziQhjG"
+        x: "8FSufgpQ8VXgxnR5svvi-j8_4iXxB0TIsVVb0EiRP7s"
       realm:
         id: bae
-        #did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
+        did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
         displayName: "Marketplace Keycloak"
         displayNameHtml: "<div class=\"kc-logo-text\"><span>Marketplace Keycloak</span></div>"
         user:
@@ -144,19 +144,19 @@ applications:
             value: "true"
           - name: KEYCLOAK_LOG_LEVEL
             value: INFO
-          #- name: VCISSUER_ISSUER_DID
-          #  value: "did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
+          - name: VCISSUER_ISSUER_DID
+            value: "did:key:z6MkvdQnXeKgRceAhNsZYjpQjSFcmTXshyGDvnNw7gziQhjG"
           - name: VCISSUER_WALTID_ADDRESS
             value: "http://marketplace-waltid-vcwaltid"
-          #- name: VCISSUER_ISSUER_KEY_FILE
-          #  value: /opt/keys/keyfile.json
+          - name: VCISSUER_ISSUER_KEY_FILE
+            value: /opt/keys/keyfile.json
         extraVolumes:
           - name: profiles
             configMap:
               name: keycloak-bae-profile
-          #- name: issuer-key
-          #  configMap:
-          #    name: consumer-keycloak-hp-key
+          - name: issuer-key
+            configMap:
+              name: keycloak-bae-key
           - name: providers
             emptyDir: {}
         
@@ -610,6 +610,7 @@ applications:
           parties:
             - id: "EU.EORI.DEMARKETPLACE"
               name: "i4TrustMarketplace"
+              did: "did:key:z6MkvdQnXeKgRceAhNsZYjpQjSFcmTXshyGDvnNw7gziQhjG"
               status: "Active"
               start_date: "2021-09-27T00:00:00Z"
               end_date: "2051-09-27T00:00:00Z"
