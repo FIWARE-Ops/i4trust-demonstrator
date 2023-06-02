@@ -175,6 +175,7 @@ applications:
           routeEnabled: true
           secretName: fiware-dev-wildcard-tls-secret
           host: bae-lp.i4t-main.fiware.dev
+          serviceName: "i4t-main-bae-biz-ecosystem-logic-proxy"
       initData:
         createAddress:
           addressEnabled: true
@@ -430,7 +431,6 @@ applications:
               -----END CERTIFICATE-----
 
         bizEcosystemLogicProxy:
-          fullnameOverride: ""
           db:
             host: mongodb.i4t-main.svc.cluster.local
           route:
