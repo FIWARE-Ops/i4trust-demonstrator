@@ -430,6 +430,7 @@ applications:
               -----END CERTIFICATE-----
 
         bizEcosystemLogicProxy:
+          fullnameOverride: ""
           db:
             host: mongodb.i4t-main.svc.cluster.local
           route:
