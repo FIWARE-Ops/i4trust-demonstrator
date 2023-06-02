@@ -624,7 +624,7 @@ applications:
   - name: pdc-ccs
     enabled: true
     source_path: applications/provider-ccs
-    source_ref: *branch
+    source_ref: main
     destination: *destination
     purpose: *purpose
     helm_values:
