@@ -171,6 +171,10 @@ applications:
       loadPlugins:
         pluginsEnabled: true
         targetNamespace: i4t-main
+      lpSpecificRoute:
+          routeEnabled: true
+          secretName: fiware-dev-wildcard-tls-secret
+          host: bae-lp.i4t-main.fiware.dev
       initData:
         createAddress:
           addressEnabled: true
@@ -424,20 +428,20 @@ applications:
               kb2CZS4H8+GB2UK1nsk+Fv9Joc4CFp6LOvXSJ9m8O/9GIfqOwbl12ldN9/9Oyia5
               gty2Gjmr0kunFqqelUzoqMc7Jh/8EPPjVpK3gJUdZM4JlSHZjA==
               -----END CERTIFICATE-----
-              
+
         bizEcosystemLogicProxy:
           db:
             host: mongodb.i4t-main.svc.cluster.local
           route:
-            routes:
-              - tls:
-                  termination: edge
-                  insecureEdgeTerminationPolicy: Redirect
-                host: bae-lp.i4t-main.fiware.dev
-                certificate:
-                  issuer:
-                    kind: ClusterIssuer
-                    name: letsencrypt-aws-prod
+            routes: []
+              #- tls:
+              #    termination: edge
+              #    insecureEdgeTerminationPolicy: Redirect
+              #  host: bae-lp.i4t-main.fiware.dev
+              #  certificate:
+              #    issuer:
+              #      kind: ClusterIssuer
+              #      name: letsencrypt-aws-prod
           token:
             identifier: "EU.EORI.DEMARKETPLACE"
             key: |
