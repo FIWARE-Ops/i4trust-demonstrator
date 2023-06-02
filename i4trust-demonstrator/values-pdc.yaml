@@ -621,6 +621,15 @@ applications:
     helm_values:
     - values.yaml
 
+  - name: pdc-ccs
+    enabled: true
+    source_path: applications/provider-ccs
+    source_ref: *branch
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+
   - name: pdc-verifier
     enabled: true
     source_path: applications/provider-verifier
