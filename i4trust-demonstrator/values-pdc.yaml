@@ -634,6 +634,21 @@ applications:
     purpose: *purpose
     helm_values:
     - values.yaml
+    values:
+      service:
+        createServiceConfig: true
+        ccsHost: "http://pdc-ccs-credentials-config-service:8080"
+        credentials:
+          - type: VerifiableCredential
+            trustedParticipantsLists:
+              - "https://tir-pdc.gaia-x.fiware.dev"
+            trustedIssuersLists:
+              - "http://pdc-til-trusted-issuers-list:8080"
+          - type: PacketDeliveryService
+            trustedParticipantsLists:
+              - "https://tir-pdc.gaia-x.fiware.dev"
+            trustedIssuersLists:
+              - "http://pdc-til-trusted-issuers-list:8080"
 
   - name: pdc-til
     enabled: true
@@ -660,6 +675,8 @@ applications:
             did: did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr
           ssikit:
             auditorUrl: http://pdc-waltid-vcwaltid:7003
+          configRepo:
+            configEndpoint: http://pdc-ccs-credentials-config-service:8080/
       issuerKey:
         waltCoreUrl: http://pdc-waltid-vcwaltid:7000
         d: "WgcX0y0OZxlA6FtLk6m3lwy_sZMvKazVax9ER10T7xY"
