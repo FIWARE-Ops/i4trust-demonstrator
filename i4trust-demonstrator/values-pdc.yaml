@@ -636,7 +636,7 @@ applications:
     - values.yaml
     values:
       service:
-        createServiceConfig: true
+        createServiceConfig: false
         ccsHost: "http://pdc-ccs-credentials-config-service:8080"
         credentials:
           - type: VerifiableCredential
