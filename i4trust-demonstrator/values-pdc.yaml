@@ -451,6 +451,11 @@ applications:
             token: "https://pdc-keyrock-0-i4t-main.apps.fiware.fiware.dev/oauth2/token"
             policy: "https://pdc-keyrock-0-i4t-main.apps.fiware.fiware.dev/ar/policy"
             delegation: "https://pdc-keyrock-0-i4t-main.apps.fiware.fiware.dev/ar/delegation"
+          issuer:
+            clientId: "packet-delivery-service"
+            providerId: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
+            tilUri: "http://til.internal"
+            verifierUri: "https://provider-verifier-vcverifier-i4t-provider-main.apps.fiware.fiware.dev"
           client:
             id: "EU.EORI.DEPROVIDER"
             key: |
@@ -624,6 +629,15 @@ applications:
   - name: pdc-ccs
     enabled: true
     source_path: applications/provider-ccs
+    source_ref: main
+    destination: *destination
+    purpose: *purpose
+    helm_values:
+    - values.yaml
+
+  - name: pdc-til
+    enabled: true
+    source_path: applications/provider-til
     source_ref: main
     destination: *destination
     purpose: *purpose
@@ -844,11 +858,6 @@ applications:
     - values.yaml
     values:
       pdc-portal:
-        #deployment:
-        #  image:
-        #    repository: quay.io/wi_stefan/pdc-portal
-        #    tag: 2.4.0-PRE
-        #    pullPolicy: Always
         config:
           external:
             host: https://pdc-portal-i4t-main.apps.fiware.fiware.dev
