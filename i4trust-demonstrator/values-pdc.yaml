@@ -455,7 +455,7 @@ applications:
             clientId: "packet-delivery-service"
             providerId: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
             tilUri: "http://pdc-til-trusted-issuers-list:8080"
-            verifierUri: "https://provider-verifier-vcverifier-i4t-provider-main.apps.fiware.fiware.dev"
+            verifierUri: "https://pdc-verifier-vcverifier-i4t-main.apps.fiware.fiware.dev"
           client:
             id: "EU.EORI.DEPROVIDER"
             key: |
