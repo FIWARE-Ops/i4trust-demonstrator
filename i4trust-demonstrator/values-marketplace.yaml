@@ -73,6 +73,28 @@ applications:
     helm_values:
     - values.yaml
 
+  - name: tir-orion
+    enabled: true
+    source_path: applications/orion
+    source_ref: main
+    destination: *destination
+    helm_values:
+    - values.yaml
+    values:
+      orion:
+        broker:
+          db:
+            hosts:
+              - mongodb.i4t-main.svc.cluster.local
+
+  - name: trusted-issuers-registry
+    enabled: true
+    source_path: applications/trusted-issuers-registry
+    source_ref: main
+    destination: *destination
+    helm_values:
+    - values.yaml
+
   - name: keyrock
     enabled: true
     source_path: applications/keyrock
