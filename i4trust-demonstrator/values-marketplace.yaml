@@ -34,19 +34,19 @@ applications:
               did: "did:key:z6MksU6tMfbaDzvaRe5oFE4eZTVTV4HJM4fmQWWGsDGQVsEr"
               server: "https://pdc-keyrock-0-i4t-main.apps.fiware.fiware.dev"
               description: "Employee IDP of Packet Delivery Company"
-              callbackURL: "https://bae-lp-i4t-main.fiware.dev/auth/EU.EORI.DEPROVIDER/callback"
+              callbackURL: "https://bae-lp-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DEPROVIDER/callback"
             - name: "Happy Pets Inc."
               id: "EU.EORI.DECONSUMERONE"
               did: "did:key:z6MkigCEnopwujz8Ten2dzq91nvMjqbKQYcifuZhqBsEkH7g"
               server: "https://happypets-keyrock-0-i4t-main.apps.fiware.fiware.dev"
               description: "Employee IDP of Happy Pets"
-              callbackURL: "https://bae-lp-i4t-main.fiware.dev/auth/EU.EORI.DECONSUMERONE/callback"
+              callbackURL: "https://bae-lp-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DECONSUMERONE/callback"
             - name: "No Cheaper Inc."
               id: "EU.EORI.DECONSUMERTWO"
               did: "did:key:z6MkwYMZVh4YKnLT98oYLtQ55Dt1d5ThRddrq1BVWrM5t3wz"
               server: "https://nocheaper-keyrock-0-i4t-main.apps.fiware.fiware.dev"
               description: "Employee IDP of No Cheaper"
-              callbackURL: "https://bae-lp-i4t-main.fiware.dev/auth/EU.EORI.DECONSUMERTWO/callback"
+              callbackURL: "https://bae-lp-i4t-main.apps.fiware.fiware.dev/auth/EU.EORI.DECONSUMERTWO/callback"
 
   - name: mysql
     enabled: true
@@ -106,8 +106,8 @@ applications:
       marketplace:
         id: 71049899-b919-4d0f-9303-e5d2fd1bbb90
         secret: f7e11746-b84f-4748-86e5-107146e888h7
-        url: https://bae-lp-i4t-main.fiware.dev
-        redirectUrl: https://bae-lp-i4t-main.fiware.dev/auth/fiware/callback
+        url: https://bae-lp-i4t-main.apps.fiware.fiware.dev
+        redirectUrl: https://bae-lp-i4t-main.apps.fiware.fiware.dev/auth/fiware/callback
       keyrock:
         initScript:
           dbName: idm_bae
@@ -196,7 +196,7 @@ applications:
       lpSpecificRoute:
           routeEnabled: true
           secretName: fiware-dev-wildcard-tls-secret
-          host: bae-lp-i4t-main.fiware.dev
+          host: bae-lp-i4t-main.apps.fiware.fiware.dev
           serviceName: marketplace-biz-ecosystem-logic-proxy
       initData:
         createAddress:
@@ -231,7 +231,7 @@ applications:
               username: "pdc-operator"
         fillIndexes:
           indexesEnabled: true
-        lpHref: https://bae-lp-i4t-main.fiware.dev
+        lpHref: https://bae-lp-i4t-main.apps.fiware.fiware.dev
         targetNamespace: i4t-main
         createOfferings:
           lpHrefInternal: http://marketplace-biz-ecosystem-logic-proxy.i4t-main.svc.cluster.local:8004
@@ -296,7 +296,7 @@ applications:
           server: https://keyrock-0-i4t-main.apps.fiware.fiware.dev
           clientId: 71049899-b919-4d0f-9303-e5d2fd1bbb90
           clientSecret: f7e11746-b84f-4748-86e5-107146e888h7
-        externalUrl: https://bae-lp-i4t-main.fiware.dev
+        externalUrl: https://bae-lp-i4t-main.apps.fiware.fiware.dev
         bizEcosystemApis:
           db:
             host: mysql.i4t-main.svc.cluster.local
@@ -480,7 +480,7 @@ applications:
               #- tls:
               #    termination: edge
               #    insecureEdgeTerminationPolicy: Redirect
-              #  host: bae-lp-i4t-main.fiware.dev
+              #  host: bae-lp-i4t-main.apps.fiware.fiware.dev
               #  certificate:
               #    issuer:
               #      kind: ClusterIssuer
